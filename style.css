@@ -24,11 +24,21 @@ body {
 #content .outline-5,
 #content .outline-6 {
   text-align: justify;
+}
+
+#table-of-contents,
+#content .outline-1,
+#content .outline-2,
+#content .outline-3,
+#content .outline-4,
+#content .outline-5,
+#content .outline-6 {
   max-width: 800px;
   margin: 0 auto;
 }
 
 @media screen and (max-width: 1280px) {
+  #table-of-contents,
   #content .outline-1,
   #content .outline-2,
   #content .outline-3,
@@ -40,6 +50,7 @@ body {
 }
 
 @media screen and (max-width: 1500px) {
+  #table-of-contents,
   #content .outline-1,
   #content .outline-2,
   #content .outline-3,
