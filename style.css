@@ -1,3 +1,7 @@
+body {
+  font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
+}
+
 @media screen and (max-width: 768px) {
   #toggle-sidebar h2 {
     opacity: 1;
@@ -13,7 +17,13 @@
   margin: 0 auto;
 }
 
-#content .outline-2 {
+#content .outline-1,
+#content .outline-2,
+#content .outline-3,
+#content .outline-4,
+#content .outline-5,
+#content .outline-6 {
+  text-align: justify;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -38,18 +48,113 @@
   padding: 0 1rem;
 }
 
-.notice-warning {
+.notice {
   position: relative;
   padding: .75rem 1.25rem;
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: .25rem;
 
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.notice.notice-warning {
   color: #856404;
   background-color: #fff3cd;
   border-color: #ffeeba;
 }
 
-.notice-warning p {
+.notice.notice-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+
+#content ul ol,
+#content ol ul {
+  margin-bottom: 0.75rem;
+}
+
+#content li {
+  margin-bottom: 0.25rem;
+}
+
+
+.decisions p,
+.decisions ul,
+.decisions ol,
+.notice p,
+.notice ol,
+.notice ul {
   margin: 0;
+}
+
+.decisions {
+  position: relative;
+  padding: .75rem 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+
+  color: #383d41;
+  background-color: #efefef;
+  border-color: #e2e3e5;
+}
+
+.review {
+  position: relative;
+}
+
+.review:after {
+  position: absolute;
+  display: block;
+  content: " ";
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  right: -16px;
+
+  border-radius: 4px;
+  background-color: #a4eaff;
+}
+
+.review.review-left:after {
+  left: -16px;
+}
+
+.review.review-warning:after {
+  background-color: #ffa570;
+}
+
+.review.review-error:after {
+  background-color: #ff838e;
+}
+
+.review .review-text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -24px;
+  transform: translateX(100%);
+  max-width: 200px;
+  text-align: left;
+
+  color: #3dcae1;
+}
+
+.review.review-left .review-text {
+  left: -24px;
+  transform: translateX(-100%);
+  text-align: right;
+}
+
+.review.review-warning .review-text {
+  color: #ff8d4a;
+}
+
+.review.review-error .review-text {
+  color: #ff384a;
 }

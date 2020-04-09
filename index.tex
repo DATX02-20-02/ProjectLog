@@ -1,4 +1,4 @@
-% Created 2020-04-09 Thu 17:49
+% Created 2020-04-09 Thu 19:46
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -34,7 +34,7 @@
 \setlength{\parskip}{\baselineskip}
 
 \section*{Introduction}
-\label{sec:org402d66a}
+\label{sec:orgf877cea}
 This page will consist of the collaborative log from each group member and
 eventual problems and challenges that the group encounters during the
 development process of the project.
@@ -43,9 +43,9 @@ Usually, the group will write their own individual efforts at the end of the
 week and then compose it into one shared log which will be written here.
 
 \section*{Week 1}
-\label{sec:org9b5f427}
+\label{sec:org6ad6018}
 This week marks the start of the project, and thus a lot of research and
-administrative tasks was required, such as decisions regarding tools and
+administrative tasks had to be done, such as decisions regarding tools and
 a schedule.
 
 Every decision that we make during meetings should be documented, so we decided
@@ -54,7 +54,9 @@ individual's own weekly logs, but we later realized we needed a shared log that
 summarized the overall progress of the project, which is the log that you are
 reading right now.
 
-Here are some decisions that were made during this week:
+\subsection*{Decisions}
+\label{sec:org9321bbb}
+\begin{decisions}
 \begin{itemize}
 \item The secretary during the meetings should be rotated according to this order:
 \begin{enumerate}
@@ -63,9 +65,11 @@ Here are some decisions that were made during this week:
 \item Anton Håkansson
 \item Viktor Truvé
 \end{enumerate}
-\item The report should be written in  \LaTeX{}
+\item The report should be written in \LaTeX{} and it should be written in swedish
+(this decision was later changed to english in a future decision).
+\item Theodor is responsible for booking group rooms for meetings.
 \end{itemize}
-
+\end{decisions}
 
 We decided to use Google Calendar for scheduled meetings, and that we should
 have two lunch meetings as well as 3 workshops every week. The lunch meetings
@@ -83,6 +87,8 @@ documents and resources we collect during the projects lifetime would be placed
 in drive for ease of access, while the project code and report is in two
 separate Github repositories for version control.
 
+\subsection*{Meetings and research.}
+\label{sec:orgc946633}
 We got to meet our supervisor during this week which guided us to get a good
 start with the project, and we were also able to ask any questions we had before
 getting started.
@@ -95,39 +101,109 @@ the project to get a deeper understanding of what requirements and
 specifications our project would need.
 
 \section*{Week 2}
-\label{sec:orge6071e4}
+\label{sec:orgf7d1bf6}
 This week also had a few lectures, and Alexander also came back from his
 vacation so we made sure to get him up to date.
 
+\subsection*{Decisions}
+\label{sec:org2b84563}
+\begin{decisions}
+\begin{itemize}
+\item Theodor is responsible for the meeting agenda but does not have to be
+secretary ever.
+\item Jacob is responsible for the administrative decisions documents but does not
+have to be secretary ever.
+\item Anton is responsible for booking group rooms for workshops every week.
+\item If a group member is late for a meeting, that group member cannot log the time
+that was missed.
+\end{itemize}
+\end{decisions}
+
+\subsection*{Discussion and planning}
+\label{sec:orgce683b9}
 Lots of subjects were brought up during the workshops this week, such as what
 method we wanted to use for different parts in the world generator.
 We quickly came up with two methods of generating roads, and because we could
 not all agree on one method we decided it was best to create two separate demos
 that would demonstrate the method and its pros / cons.
 
-The first demo made use of road building Agents that were deployed onto a
-2D-plane, and placed down roads while interacting with the road network. This
-was initially a very basic system that simply had Agents walk in straight lines
-and sometimes branching off into more Agents.
+The first demo would make use of road building Agents that would be deployed
+onto a 2D-plane, and they would place down roads while interacting with the road
+network. This would initially be a very basic system that would simply have
+Agents walk in straight lines and sometimes branch off into more Agents.
 
-The second demo used a recursive approach where it split the world into small
-cells, and each cell could further be subdivided. The idea was to place down a
-lot of points, split the cell into two by creating a line between each point,
-and then recursively applying that algorithm into more detail.
+The second demo would use a recursive approach where it splits the world into
+small cells, and each cell would further be subdivided. The idea was to place
+down a lot of points, split the cell into two by creating a line between each
+point, and then recursively applying that algorithm into more detail.
 
 We decided to postpone selecting which tools to use for our project until next
 week, because we wanted to research which tool would suit us best and needed
-more time.
+more ticouldme.
 
+\section*{Week 3}
+\label{sec:orgce0b2b0}
+\subsection*{Decisions}
+\label{sec:org4a2e8db}
+\begin{decisions}
+\begin{itemize}
+\item The Agent-based method for road generation is the one we are going to use.
+\item A summary of the current week progress should be written during every Friday's
+workshop at 16:00.
+\item Alexander is responsible for the communication between the other project
+group that has the same project as our group.
+\item Anton is responsible for the communication between our group and the
+supervisor which means he is responsible for sending and responding to mail
+with the supervisor.
+\item We decided we do not need any strict rules for taking breaks during workshops,
+in regards to if that pause should be logged (acceptable within reasonable
+durations).
+\item Unity and C\# will be used for the project
+\item We limit ourself to only generating modern cities.
+\item Some \LaTeX{} writing style preferences were decided upon for consistency within
+the group.
+\end{itemize}
+\end{decisions}
 
-In this week we attended a few lectures.
-We had our first 3 work meetings, started on the project plan, developed 2 demos
-for the road generation, and further discussed the specifications of the
+\subsection*{Tools}
+\label{sec:org7d31507}
+Unity and C\# are by far the easiest tools to use for our project, and it suits
+our needs completely. Some of us are already familiar with Unity and C\#.
+Everything that the project needs (and more) is offered within Unity, as well as
+very powerful debugging and profiling tools. Lots of features that we want to
+implement can easily be done with Unity compared to other tools available.
+
+Some alternatives that were researched up to this week is C++ Raylib, Java
+LWGJL, Java jMonkeyEngine, but these were ruled out mostly because it lacked
+most of the tools that we would need which Unity already had.
+Choosing one of those alternatives would mean we would have to reimplement a lot
+of basic functionality that would only postpone actual development of the
 project.
-The first road demo made use of road building agents that were deployed onto a
-2D-plane, and built outwards.
-The second demo used a recursive approach were it split the world into small
-cells. We made a lot of admin related decisions. We also researched a bit.
+
+\subsection*{Report, Project plan and Terminology}
+\label{sec:orge7960d9}
+For the most part, this week was spent writing the project plan and the first
+draft was quickly completed in order to get feedback from the supervisor.
+
+Something that we quickly realized would be important for writing the project
+plan and report was terminology.
+Even within our group, we realized there were inconsistency in the meaning of
+words and that meant that we had to define these very strictly in the report in
+order to avoid confusion for the reader. We spent a while defining these and
+they can be found in the project plan / report.
+
+\subsection*{Development}
+\label{sec:orgac1204f}
+The first method of road generation turned out to be best suited for our
+project, but the second method will be considered for plot generation in the
+future.
+A lot of progress was made on making the road generation as flexible as
+possible, as well as tuning the results for better results.
+
+The road generator now lets each agent to have its own strategy for generation
+which they will follow. One example of a road strategy that is used is the Paris
+or Manhattan strategy, which basically means the agents will walk around and
+place roads that mimic the structure of these cities.
 
 \begin{w-1/2}
 \begin{center}
@@ -135,19 +211,23 @@ cells. We made a lot of admin related decisions. We also researched a bit.
 \end{center}
 \end{w-1/2}
 
-\section*{Week 3}
-\label{sec:org5481319}
-In this week we have put a lot of effort into the project plan. We have finished
-a first draft for feedback from the supervisor. We have also decided which tools
-(Unity/C\#) we will use to develop the end product.  Furthermore we have also
-defined common terminology for referencing the different sections of the road
-subdivisioning. We have also expanded the prototypes of road generation with
-road strategies for different types of city types (Paris, Washington) and more
-natural streets. We have defined a pipeline for the program which essentially
-means that we have finalized a design for the algorithm.      
+For the world generator, we defined a pipeline that the program will follow
+which basically means that we have created a design for the algorithm as a
+whole.
+
+\subsection*{Overall}
+\label{sec:org6ba8d52}
+It was useful to get a lot of work done this early and we quickly get a
+perspective of how the city generation would work. Lots of great feedback from
+our supervisor resulted in a better writing technique and better results from
+the algorithm
 
 \section*{Week 4}
-\label{sec:org8005ad0}
+\label{sec:org1c77a8a}
+\begin{notice-warning}
+This section has not been rewritten yet!
+\end{notice-warning}
+
 In this week we had a very constructive meeting with Staffan who gave us tips on
 how to improve our current project plan. Jacob also set up a Unity-base project.
 Although specific sections were originally assigned to be written by project
@@ -156,7 +236,11 @@ modified by someone else. Everyone made an effort to make sure that each of the
 chapters were well-written and together made up one coherent text.
 
 \section*{Week 5}
-\label{sec:org378b96c}
+\label{sec:orgb91b0a9}
+\begin{notice-warning}
+This section has not been rewritten yet!
+\end{notice-warning}
+
 ``In this week we started programming the different generators. Theodor worked with the BuildingGenerator and the PlotGenerator, Viktor worked with the ParkGenerator, Anton and Alexander with the RoadGenerator, Marcus with the TerrainGenerator.
 Jacob has worked with FBX export to work in runtime, and had to try a lot of
 options to get something to work. One of major problems has been to make the
@@ -165,7 +249,11 @@ that resembles the mock. Anton worked on generating a road mesh following a
 (poly)bezier spline for the Road Generation.''
 
 \section*{Week 6}
-\label{sec:orgcbf7955}
+\label{sec:orga1833a1}
+\begin{notice-warning}
+This section has not been rewritten yet!
+\end{notice-warning}
+
 In this week everyone kept working on the generators from last week and
 improving them. Viktor and Anton also spent time on preparing the half-time
 presentation.  The progress in output from the generators will be provided as
@@ -181,7 +269,11 @@ new iteration. The current FBX exporter only works in editor runtime which is a
 major concern.
 
 \section*{Week 7}
-\label{sec:orgca7ff6c}
+\label{sec:org7878c6c}
+\begin{notice-warning}
+This section has not been rewritten yet!
+\end{notice-warning}
+
 In this week Anton and Viktor held the halftime presentation. Viktor spent most
 of the rest of the week after that working on the PathGenerator for the parks,
 he was also assisted by Anton. Anton worked on coupling the generated road
@@ -195,7 +287,11 @@ exporter, but it works better than the last one. Marcus worked on adding water
 feature to the terrain and tweak the textures.
 
 \section*{Week 8}
-\label{sec:orge189878}
+\label{sec:orge44b28f}
+\begin{notice-warning}
+This section has not been rewritten yet!
+\end{notice-warning}
+
 This week Anton worked on creating intersections between roads. At the moment
 the outline of the intersection looks reasonable - however, no actual complete
 mesh is generated except for the arc ``''corners``'' between two roads entering the
@@ -214,11 +310,19 @@ Marcus has been working slightly on camera movement so that the user can look
 around the city.
 
 \section*{Week 9}
-\label{sec:org899bfec}
+\label{sec:orga7c35b7}
+\begin{notice-warning}
+This section has not been rewritten yet!
+\end{notice-warning}
+
 <Exam week>
 
 \section*{Week 10}
-\label{sec:org798326f}
+\label{sec:org04203c6}
+\begin{notice-warning}
+This section has not been rewritten yet!
+\end{notice-warning}
+
 In this week, Marcus has worked on the UI for the terrain generator, adding sea
 level, x offset and z offset as modifiable options. A lot of PRs were
 reviewed/merged such as Mesh Terrain, Noise module, plots and buildings. We aso
@@ -233,7 +337,11 @@ tweaking the intersections to a way that more similarily resembled CityEngine's
 intersections(WIP).
 
 \section*{Week 11}
-\label{sec:orgc729f88}
+\label{sec:org234fee3}
+\begin{notice-warning}
+This section has not been rewritten yet!
+\end{notice-warning}
+
 Jacob added a skyscraper generator, 5 pages were written on the Theory chapter
 (Noise, L-systems, Search-based PCG and Voronoi Diagrams). Marcus has finished
 the terrain options: terrain offset and sea level sliders. Using the sliders,
@@ -259,9 +367,9 @@ a
 
 
 
-\label{org71dc203}
+\label{orgc70132d}
 \bibliographystyle{amsplain}
 
-\label{org92c661b}
+\label{orga8bc053}
 \bibliography{references}
 \end{document}

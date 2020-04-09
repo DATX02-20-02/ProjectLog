@@ -27,7 +27,7 @@ week and then compose it into one shared log which will be written here.
 
 * Week 1
 This week marks the start of the project, and thus a lot of research and
-administrative tasks was required, such as decisions regarding tools and
+administrative tasks had to be done, such as decisions regarding tools and
 a schedule.
 
 Every decision that we make during meetings should be documented, so we decided
@@ -37,6 +37,7 @@ summarized the overall progress of the project, which is the log that you are
 reading right now.
 
 ** Decisions
+#+begin_decisions
 - The secretary during the meetings should be rotated according to this order:
   1. Marcus Ansamaa
   2. Alexander Arvidsson
@@ -45,6 +46,7 @@ reading right now.
 - The report should be written in LaTeX and it should be written in swedish
   (this decision was later changed to english in a future decision).
 - Theodor is responsible for booking group rooms for meetings.
+#+end_decisions
 
 We decided to use Google Calendar for scheduled meetings, and that we should
 have two lunch meetings as well as 3 workshops every week. The lunch meetings
@@ -62,8 +64,8 @@ documents and resources we collect during the projects lifetime would be placed
 in drive for ease of access, while the project code and report is in two
 separate Github repositories for version control.
 
-** Meetings etc.
-We got to meet our supervisor during this week which guided us to get a good
+** Meetings and research.
+We got to meet our supervisor, Staffan, during this week which guided us to get a good
 start with the project, and we were also able to ask any questions we had before
 getting started.
 
@@ -79,6 +81,7 @@ This week also had a few lectures, and Alexander also came back from his
 vacation so we made sure to get him up to date.
 
 ** Decisions
+#+begin_decisions
 - Theodor is responsible for the meeting agenda but does not have to be
   secretary ever.
 - Jacob is responsible for the administrative decisions documents but does not
@@ -86,6 +89,7 @@ vacation so we made sure to get him up to date.
 - Anton is responsible for booking group rooms for workshops every week.
 - If a group member is late for a meeting, that group member cannot log the time
   that was missed.
+#+end_decisions
 
 ** Discussion and planning
 Lots of subjects were brought up during the workshops this week, such as what
@@ -110,6 +114,7 @@ more ticouldme.
 
 * Week 3
 ** Decisions
+#+begin_decisions
 - The Agent-based method for road generation is the one we are going to use.
 - A summary of the current week progress should be written during every Friday's
   workshop at 16:00.
@@ -125,9 +130,10 @@ more ticouldme.
 - We limit ourself to only generating modern cities.
 - Some LaTeX writing style preferences were decided upon for consistency within
   the group.
+#+end_decisions
 
 ** Tools
-Unity and C# are by far the easiest to use tools for our project, and it suits
+Unity and C# are by far the easiest tools to use for our project, and it suits
 our needs completely. Some of us are already familiar with Unity and C#.
 Everything that the project needs (and more) is offered within Unity, as well as
 very powerful debugging and profiling tools. Lots of features that we want to
@@ -163,36 +169,113 @@ which they will follow. One example of a road strategy that is used is the Paris
 or Manhattan strategy, which basically means the agents will walk around and
 place roads that mimic the structure of these cities.
 
-#+begin_w-1/2
-[[./images/week1/img-000.png]]
-#+end_w-1/2
+#+begin_columns
+
+#+begin_column
+#+CAPTION: Road generation prototype using method 1
+[[./images/week2/img-000.png]]
+#+end_column
+
+#+begin_column
+#+CAPTION: Road generation with population map (dark is high density in this picture)
+[[./images/week2/popmap.png]]
+#+end_column
+
+#+end_columns
 
 For the world generator, we defined a pipeline that the program will follow
 which basically means that we have created a design for the algorithm as a
 whole.
 
 ** Overall
-It was useful to get a lot of work done this early and we quickly get a
+It was useful to get a lot of work done this early and we quickly got a
 perspective of how the city generation would work. Lots of great feedback from
 our supervisor resulted in a better writing technique and better results from
-the algorithm
+the algorithm.
 
 * Week 4
-#+begin_notice-warning
-This section has not been rewritten yet!
-#+end_notice-warning
+#+ATTR_HTML: :class notice-warning
+#+begin_notice
+This section is work in progress!
+#+end_notice
 
-In this week we had a very constructive meeting with Staffan who gave us tips on
-how to improve our current project plan. Jacob also set up a Unity-base project.
-Although specific sections were originally assigned to be written by project
-members eventually all parts of the plan was to some degree rewritten or
-modified by someone else. Everyone made an effort to make sure that each of the
-chapters were well-written and together made up one coherent text.
+Since the deadline for the project plan was coming up, this week was dedicated
+to writing the content of the plan. Most of the time went to this, but there
+were development in the prototypes and method ideas that we brought up from past
+weeks.
+
+In general, most sections of the report was rewritten by members that were not
+originally assigned to the section, in order to increase consistency.
+Everyone in the group made an effort to make sure that each of the chapters were
+well-written and together made up one coherent text.
+
+** Decisions
+#+begin_decisions
+- We decided to not pursue the Wave Function Collapse type of procedural
+  generation for roads.
+#+end_decisions
+
+** Meeting, writing and assignments
+Another meeting with Staffan resulted in very constructive feedback regarding
+our current project plan up to this week.
+
+#+ATTR_HTML: :class review-error
+#+begin_review
+#+begin_review-text
+Red means bad, this should be removed
+#+end_review-text
+
+We decided we wanted to find some tools for spell-checking and grammar-checking,
+so we tried a few different tools. Grammarly turned out to be the most useful
+one because it helped us phrase our sentences more consistently and more
+"scientific", basically giving our report more credibility.
+#+end_review
+
+#+ATTR_HTML: :class review-warning review-left
+#+begin_review
+#+begin_review-text
+Orange is more of a question, should this be changed?
+#+end_review-text
+
+Another tool we investigated is textidote, which is a tool for LaTeX for
+spelling, grammar and general LaTeX syntax checking. We mostly used this for the
+syntax, since grammarly did a much better job at spelling and grammar.
+#+end_review
+
+#+begin_review
+#+begin_review-text
+Blue is good, might be pretty useless
+#+end_review-text
+By this time, most of us had finished and passed the Chalmers Library Education
+Online assignment which consisted of a variety of writing technique questions,
+such as how to reference sources properly, evaluating source credibility and
+more.
+#+end_review
+
+** Discussion and decisions
+This week we discussed more methods and algorithms that are commonly used in
+procedurally generated content. Wave Function Collapse came up as a possible
+algorithm instead of the current road generation algorithm, but we decided to
+not pursue it given that the Agent-based generator would give suitable results.
+
+Some of the eventual problems that could pose an issue for our project if we
+were to use Wave Function Collapse is that our city is not really
+two-dimensional, but that could be avoided. The biggest issue is that from what
+we found during our research of Wave Function Collapse is that it often results
+in rectangular results, but we did not want that type of consistency in our city
+which is why we decided to stick with our current Agent-based method.
+
+We also talked about machine learning and Search-based AI, but we realized that
+there is not really a clear definition of how "good" a road is, and that is
+needed for the AI to be taught. One could potentially input real world data
+which would teach the AI to generate similar cities, however, none of us were
+very experienced in the machine learning field and thus we decided to skip this.
 
 * Week 5
-#+begin_notice-warning
-This section has not been rewritten yet!
-#+end_notice-warning
+#+ATTR_HTML: :class notice-warning
+#+begin_notice
+This section is work in progress!
+#+end_notice
 
 "In this week we started programming the different generators. Theodor worked with the BuildingGenerator and the PlotGenerator, Viktor worked with the ParkGenerator, Anton and Alexander with the RoadGenerator, Marcus with the TerrainGenerator.
 Jacob has worked with FBX export to work in runtime, and had to try a lot of
@@ -202,9 +285,10 @@ that resembles the mock. Anton worked on generating a road mesh following a
 (poly)bezier spline for the Road Generation."
 
 * Week 6
-#+begin_notice-warning
+#+ATTR_HTML: :class notice-error
+#+begin_notice
 This section has not been rewritten yet!
-#+end_notice-warning
+#+end_notice
 
 In this week everyone kept working on the generators from last week and
 improving them. Viktor and Anton also spent time on preparing the half-time
@@ -221,9 +305,10 @@ new iteration. The current FBX exporter only works in editor runtime which is a
 major concern.
 
 * Week 7
-#+begin_notice-warning
+#+ATTR_HTML: :class notice-error
+#+begin_notice
 This section has not been rewritten yet!
-#+end_notice-warning
+#+end_notice
 
 In this week Anton and Viktor held the halftime presentation. Viktor spent most
 of the rest of the week after that working on the PathGenerator for the parks,
@@ -238,9 +323,10 @@ exporter, but it works better than the last one. Marcus worked on adding water
 feature to the terrain and tweak the textures.
 
 * Week 8
-#+begin_notice-warning
+#+ATTR_HTML: :class notice-error
+#+begin_notice
 This section has not been rewritten yet!
-#+end_notice-warning
+#+end_notice
 
 This week Anton worked on creating intersections between roads. At the moment
 the outline of the intersection looks reasonable - however, no actual complete
@@ -260,16 +346,18 @@ Marcus has been working slightly on camera movement so that the user can look
 around the city.
 
 * Week 9
-#+begin_notice-warning
+#+ATTR_HTML: :class notice-error
+#+begin_notice
 This section has not been rewritten yet!
-#+end_notice-warning
+#+end_notice
 
 <Exam week>
 
 * Week 10
-#+begin_notice-warning
+#+ATTR_HTML: :class notice-error
+#+begin_notice
 This section has not been rewritten yet!
-#+end_notice-warning
+#+end_notice
 
 In this week, Marcus has worked on the UI for the terrain generator, adding sea
 level, x offset and z offset as modifiable options. A lot of PRs were
@@ -285,9 +373,10 @@ tweaking the intersections to a way that more similarily resembled CityEngine's
 intersections(WIP).
 
 * Week 11
-#+begin_notice-warning
+#+ATTR_HTML: :class notice-error
+#+begin_notice
 This section has not been rewritten yet!
-#+end_notice-warning
+#+end_notice
 
 Jacob added a skyscraper generator, 5 pages were written on the Theory chapter
 (Noise, L-systems, Search-based PCG and Voronoi Diagrams). Marcus has finished
