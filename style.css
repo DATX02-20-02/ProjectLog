@@ -215,7 +215,7 @@ body {
     text-align: center;
   }
 
-  .review:hover .review-text {
+  .review .review-text:hover {
     opacity: 1;
     border-radius: 4px;
 
@@ -223,12 +223,12 @@ body {
     border: 1px solid #a4eaff;
   }
 
-  .review.review-warning:hover .review-text {
+  .review.review-warning .review-text:hover {
     background-color: #fff0e8;
     border-color: #ffa570;
   }
 
-  .review.review-error:hover .review-text {
+  .review.review-error .review-text:hover {
     background-color: #ffe5e7;
     border-color: #ff838e;
   }
