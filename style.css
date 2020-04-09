@@ -28,6 +28,28 @@ body {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1280px) {
+  #content .outline-1,
+  #content .outline-2,
+  #content .outline-3,
+  #content .outline-4,
+  #content .outline-5,
+  #content .outline-6 {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  #content .outline-1,
+  #content .outline-2,
+  #content .outline-3,
+  #content .outline-4,
+  #content .outline-5,
+  #content .outline-6 {
+    max-width: 600px;
+  }
+}
+
 #content img {
   width: 100%;
   display: inline-block;
@@ -114,23 +136,26 @@ body {
   content: " ";
   top: 0;
   bottom: 0;
-  width: 4px;
-  right: -16px;
+  width: 60px;
+  right: -76px;
 
   border-radius: 4px;
-  background-color: #a4eaff;
+  border-left: 4px solid #a4eaff;
 }
 
 .review.review-left:after {
-  left: -16px;
+  left: -76px;
+  width: 60px;
+  border-left: none;
+  border-right: 4px solid #a4eaff;
 }
 
 .review.review-warning:after {
-  background-color: #ffa570;
+  border-color: #ffa570;
 }
 
 .review.review-error:after {
-  background-color: #ff838e;
+  border-color: #ff838e;
 }
 
 .review .review-text {
@@ -139,7 +164,7 @@ body {
   bottom: 0;
   right: -24px;
   transform: translateX(100%);
-  max-width: 200px;
+  max-width: 150px;
   text-align: left;
 
   color: #3dcae1;
@@ -157,4 +182,43 @@ body {
 
 .review.review-error .review-text {
   color: #ff384a;
+}
+
+
+@media screen and (max-width: 1280px) {
+  .review .review-text {
+    opacity: 0;
+    transition: 100ms opacity;
+
+    right: -16px;
+    transform: none;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    box-sizing: content-box;
+    text-align: center;
+  }
+
+  .review.review-left .review-text {
+    left: -16px;
+    transform: none;
+    text-align: center;
+  }
+
+  .review:hover .review-text {
+    opacity: 1;
+    border-radius: 4px;
+
+    background-color: #e7f9ff;
+    border: 1px solid #a4eaff;
+  }
+
+  .review.review-warning:hover .review-text {
+    background-color: #fff0e8;
+    border-color: #ffa570;
+  }
+
+  .review.review-error:hover .review-text {
+    background-color: #ffe5e7;
+    border-color: #ff838e;
+  }
 }
