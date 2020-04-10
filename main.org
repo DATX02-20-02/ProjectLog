@@ -23,7 +23,21 @@ eventual problems and challenges that the group encounters during the
 development process of the project.
 
 Usually, the group will write their own individual efforts at the end of the
-week and then compose it into one shared log which will be written here.
+week and everything will be then compose into one shared log which will be
+written here.
+
+* Week 12
+#+ATTR_HTML: :class notice-error
+#+begin_notice
+This section has not been written yet!
+#+end_notice
+
+** Decisions
+#+begin_decisions
+- Group summaries are now written directly into the project log document, rather
+  than in the Google Sheet first.
+#+end_decisions
+
 
 * Week 11
 #+ATTR_HTML: :class notice-error
@@ -53,16 +67,6 @@ the terrain. He also added a collision-check for the paths and worked on
 different algorithms for the paths."
 a
 
-
-
-
-:bib_links:
-<<bibliographystyle link>>
-bibliographystyle:amsplain
-
-<<bibliography link>>
-bibliography:references.bib
-:END:
 * Week 10
 #+ATTR_HTML: :class notice-error
 #+begin_notice
@@ -171,7 +175,7 @@ This section is work in progress!
 #+end_notice
 
 Since the deadline for the project plan was coming up, this week was dedicated
-to writing the content of the plan. Most of the time went to this, but there
+to writing the content of the project plan. Most of the time went to this, but there
 were development in the prototypes and method ideas that we brought up from past
 weeks.
 
@@ -190,38 +194,19 @@ well-written and together made up one coherent text.
 Another meeting with Staffan resulted in very constructive feedback regarding
 our current project plan up to this week.
 
-#+ATTR_HTML: :class review-error
-#+begin_review
-#+begin_review-text
-Red means bad, this should be removed
-#+end_review-text
-
 We decided we wanted to find some tools for spell-checking and grammar-checking,
 so we tried a few different tools. Grammarly turned out to be the most useful
 one because it helped us phrase our sentences more consistently and more
 "scientific", basically giving our report more credibility.
-#+end_review
-
-#+ATTR_HTML: :class review-warning review-left
-#+begin_review
-#+begin_review-text
-Orange is more of a question, should this be changed?
-#+end_review-text
 
 Another tool we investigated is textidote, which is a tool for LaTeX for
 spelling, grammar and general LaTeX syntax checking. We mostly used this for the
 syntax, since grammarly did a much better job at spelling and grammar.
-#+end_review
 
-#+begin_review
-#+begin_review-text
-Blue is good, might be pretty useless
-#+end_review-text
 By this time, most of us had finished and passed the Chalmers Library Education
 Online assignment which consisted of a variety of writing technique questions,
 such as how to reference sources properly, evaluating source credibility and
 more.
-#+end_review
 
 ** Discussion and decisions
 This week we discussed more methods and algorithms that are commonly used in
@@ -377,7 +362,7 @@ reading right now.
   2. Alexander Arvidsson
   3. Anton Håkansson
   4. Viktor Truvé
-- The report should be written in LaTeX and it should be written in swedish
+- The report should be written in LaTeX and it should be written in Swedish
   (this decision was later changed to english in a future decision).
 - Theodor is responsible for booking group rooms for meetings.
 #+end_decisions

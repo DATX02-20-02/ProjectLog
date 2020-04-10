@@ -147,26 +147,24 @@ body {
   content: " ";
   top: 0;
   bottom: 0;
-  width: 60px;
-  right: -76px;
+  width: 4px;
+  right: -16px;
 
   border-radius: 4px;
-  border-left: 4px solid #a4eaff;
+  background-color: #a4eaff;
 }
 
 .review.review-left:after {
-  left: -76px;
-  width: 60px;
-  border-left: none;
-  border-right: 4px solid #a4eaff;
+  left: -16px;
 }
 
+
 .review.review-warning:after {
-  border-color: #ffa570;
+  background-color: #ffa570;
 }
 
 .review.review-error:after {
-  border-color: #ff838e;
+  background-color: #ff838e;
 }
 
 .review .review-text {
