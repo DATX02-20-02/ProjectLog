@@ -83,10 +83,10 @@ size, basically anything to generate different walls.
 Currently, there are only some different types of wall segments but this can be
 extended whenever.
 
-#+begin_w-2/3
+#+begin_w-responsive
 #+CAPTION: Theodor's building generator
 [[./images/week12/building_gen.png]]
-#+end_w-2/3
+#+end_w-responsive
 
 *** Export
 Something that Jacob got working several weeks ago was finally put to the test,
@@ -94,10 +94,10 @@ the export function. We generated a complete city and exported it and the
 results were quite nice. Textures are working fine and we now know for sure that
 the export functionality will work fine with the whole city generated.
 
-#+begin_w-2/3
+#+begin_w-responsive
 #+CAPTION: Exported mesh rendered in Blender
 [[./images/week12/blender_export.png]]
-#+end_w-2/3
+#+end_w-responsive
 
 *** GUI changes
 The GUI got a few updates to improve user experience. Now, the user cannot
@@ -306,15 +306,12 @@ major concern.
 This section is work in progress!
 #+end_notice
 
-"In this week we started programming the different generators. Theodor worked
-with the BuildingGenerator and the PlotGenerator, Viktor worked with the
-ParkGenerator, Anton and Alexander with the RoadGenerator, Marcus with the
-TerrainGenerator.
-Jacob has worked with FBX export to work in runtime, and had to try a lot of
-options to get something to work. One of major problems has been to make the
-FbxExporter in Unity to not depend on Editor code. Jacob also made a basic UI
-that resembles the mock. Anton worked on generating a road mesh following a
-(poly)bezier spline for the Road Generation."
+Most of the group members spent this week working on their own parts of the
+application, mostly getting each generator to do what it should. We also got a
+basic GUI in place that lets the user run the generators in the pipelined
+version of the application. However, it is not hooked up to much at this point,
+and the generators do not take any inputs from the world generator at the
+moment.
 
 ** Development
 *** Roads
@@ -355,11 +352,11 @@ Bezier curve, which works by interpolating values between two positions and two
 control points. The basic road mesh that resulted from this is seen in figure
 [[fig:basic_bezier_road_mesh]].
 
-#+begin_w-2/3
+#+begin_w-responsive
 #+CAPTION: Basic road mesh using a cubic Bezier curve.
 #+NAME: fig:basic_bezier_road_mesh
 [[./images/week5/mesh_spline.png]]
-#+end_w-2/3
+#+end_w-responsive
 
 *** Terrain
 The first iteration of the terrain using Unity's built in terrain functionality
@@ -367,11 +364,11 @@ was completed, but there were no textures yet. It was a simple green dynamic
 terrain that had a perlin noise attached to it, which can be seen in figure
 [[fig:unity_terrain]].
 
-#+begin_w-2/3
+#+begin_w-responsive
 #+CAPTION: Basic terrain dynamically created using built in Unity functionality
 #+NAME: fig:unity_terrain
 [[./images/week5/unity_terrain.png]]
-#+end_w-2/3
+#+end_w-responsive
 
 *** Parks
 When it came to parks, we did not really mind what the final results would look
@@ -380,15 +377,23 @@ polygon. We played around quite a bit with this, finding ways to connect a
 Perlin noise to the results and instead of generating a park we ended up
 generating a pretty neat looking forest. Take a look at figure [[fig:forest]].
 
-#+begin_w-2/3
+#+begin_w-responsive
 #+CAPTION: Park generator generating a... forest?
 #+NAME: fig:forest
 [[./images/week5/forest.png]]
-#+end_w-2/3
+#+end_w-responsive
 
 At this stage, we were using low poly trees found for free on the Unity Asset
 store, but we switched this out at a later stage for more realistic trees.
 Still, it generated a pretty nice low-poly forest!
+
+** Problems
+*** Export
+One feature that is necessary to get working early on, in order to save
+ourselves from trouble in the future is export functionality. So, Jacob has
+attempted to get FBX export to work in runtime. The problem is that the built in
+FBX exporter depends on Unity Editor code, but the goal is that our application
+should work compiled, without any editor dependencies.
 
 * Week 4
 #+ATTR_HTML: :class notice-warning
