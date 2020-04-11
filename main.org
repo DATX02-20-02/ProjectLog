@@ -320,6 +320,13 @@ was necessary to set up a dedicated testing environment for all possible cases
 that can occurr. So in Unity, Alexander created a playground that lets you put
 down nodes with your mouse, which can be seen in figure
 [[fig:road_intersection_test]], which also demonstrates the RTree used in action.
+The previous prototype were using a Quadtree which resulted in far worse
+performance than an RTree.
+
+The reason an RTree was used was that it supports bounding boxes very well,
+which is not the case for a KD-Tree or a spatial grid. Quadtrees have too much
+depth which means more iterations while searching for elements.
+More about RTrees can be read [[https://en.wikipedia.org/wiki/R-tree][here]].
 
 This meant we could create a good connection algorithm that would take into
 account intersections, snapping and nearby placement easily, something that we
