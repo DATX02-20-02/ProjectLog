@@ -280,6 +280,10 @@ inset stuff. Alex implemented the block gen inset stuff. Jacob got a .GLTF and
 exporter, but it works better than the last one. Marcus worked on adding water
 feature to the terrain and tweak the textures.
 
+** Decisions
+#+begin_decisions
+- glTF export should be used instead of FBX
+#+end_decisions
 * Week 6
 #+ATTR_HTML: :class notice-error
 #+begin_notice
@@ -300,6 +304,22 @@ that wasn't included in the scope of this iteration. Next week we will start a
 new iteration. The current FBX exporter only works in editor runtime which is a
 major concern.
 
+** Decisions
+#+begin_decisions
+- Next iteration should consist of the following subjects:
+  - Terrain texture splatting
+  - Terrain lakes/oceans
+  - Proper interaction between terrain and road generation
+  - Generalize the Perlin noise module
+  - Couple road mesh generation with road network
+  - Block generation (polygon extration and insetting)
+  - Assembly definitions
+  - CityPCG namespace
+  - Investigate alternatives to FBX export in compiled binary
+  - Plot generation
+  - Building generation (L-Systems?)
+#+end_decisions
+
 * Week 5
 #+ATTR_HTML: :class notice-warning
 #+begin_notice
@@ -312,6 +332,25 @@ basic GUI in place that lets the user run the generators in the pipelined
 version of the application. However, it is not hooked up to much at this point,
 and the generators do not take any inputs from the world generator at the
 moment.
+
+** Decisions
+#+begin_decisions
+- The first iteration will be 2 weeks, and will consist of programming and
+  preparations for the presentation.
+  The first week will focus on programming while the second week will focus on
+  evaluating what needs to be included in the presentation.
+- The first iteration is divided into the following workload:
+  1. Anton + Alexander: Road and population map generation
+  2. Theodor + Viktor: Plot and building generation
+  3. Marcus: Terrain generation
+  4. General application functionality, block generation and possibly some CI.
+- The aim of this iteration will be to develop a fully working pipeline, but the
+  quality of each generator independently is not important.
+- We decided to not use Travis CI.
+- Unity version 2019.3.1f1 will be used by all group members.
+- A parking generator should be developed in the future.
+- An R-Tree will be investigated for road intersections rather than a quadtree.
+#+end_decisions
 
 ** Development
 *** Roads
