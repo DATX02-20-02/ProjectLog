@@ -74,6 +74,31 @@ results in.
 Roads now have dedicated sidewalks and they are also correctly projected onto
 the terrain rather than clipping through it.
 
+*** Buildings
+Theodor has come a long way with new building generator which aims to replace
+the white blocks we got in our old generator. By using an L-system for
+generating the walls, we can get an incredible amount of flexibility in the
+aesthetics of the buildings. We can set up rules depending on the floor, the
+size, basically anything to generate different walls.
+Currently, there are only some different types of wall segments but this can be
+extended whenever.
+
+#+begin_w-2/3
+#+CAPTION: Theodor's building generator
+[[./images/week12/building_gen.png]]
+#+end_w-2/3
+
+*** Export
+Something that Jacob got working several weeks ago was finally put to the test,
+the export function. We generated a complete city and exported it and the
+results were quite nice. Textures are working fine and we now know for sure that
+the export functionality will work fine with the whole city generated.
+
+#+begin_w-2/3
+#+CAPTION: Exported mesh rendered in Blender
+[[./images/week12/blender_export.png]]
+#+end_w-2/3
+
 *** GUI changes
 The GUI got a few updates to improve user experience. Now, the user cannot
 proceed to the next state before the current state has generated something, and
@@ -281,12 +306,89 @@ major concern.
 This section is work in progress!
 #+end_notice
 
-"In this week we started programming the different generators. Theodor worked with the BuildingGenerator and the PlotGenerator, Viktor worked with the ParkGenerator, Anton and Alexander with the RoadGenerator, Marcus with the TerrainGenerator.
+"In this week we started programming the different generators. Theodor worked
+with the BuildingGenerator and the PlotGenerator, Viktor worked with the
+ParkGenerator, Anton and Alexander with the RoadGenerator, Marcus with the
+TerrainGenerator.
 Jacob has worked with FBX export to work in runtime, and had to try a lot of
 options to get something to work. One of major problems has been to make the
 FbxExporter in Unity to not depend on Editor code. Jacob also made a basic UI
 that resembles the mock. Anton worked on generating a road mesh following a
 (poly)bezier spline for the Road Generation."
+
+** Development
+*** Roads
+The road intersection logic that was created in the prototype had issues, so it
+was necessary to set up a dedicated testing environment for all possible cases
+that can occurr. So in Unity, Alexander created a playground that lets you put
+down nodes with your mouse, which can be seen in figure
+[[fig:road_intersection_test]], which also demonstrates the RTree used in action.
+
+This meant we could create a good connection algorithm that would take into
+account intersections, snapping and nearby placement easily, something that we
+could depend on working in the final generation.
+
+Finally, when the intersection was working like we wanted to, it was time to put
+it to the test, so we hooked it into the Agent generator and it worked pretty
+seamlessly. The results can be seen in figure [[fig:paris_generation]].
+Of course, there is always bound to be bugs, which we discovered during a later
+stage in development.
+
+#+ATTR_HTML: :class columns-align-end
+#+begin_columns
+#+begin_column
+#+CAPTION: Road intersection testing
+#+NAME: fig:road_intersection_test
+[[./images/week5/intersection_test.png]]
+#+end_column
+#+begin_column
+#+CAPTION: Road intersection testing
+#+NAME: fig:paris_generation
+[[./images/week5/paris_generation.png]]
+#+end_column
+#+end_columns
+
+*** Road mesh and Splines
+When it comes to the road mesh, we needed it to be smooth enough to not see the
+rough imperfections of the road network. So we resorted to a simple curbic
+Bezier curve, which works by interpolating values between two positions and two
+control points. The basic road mesh that resulted from this is seen in figure
+[[fig:basic_bezier_road_mesh]].
+
+#+begin_w-2/3
+#+CAPTION: Basic road mesh using a cubic Bezier curve.
+#+NAME: fig:basic_bezier_road_mesh
+[[./images/week5/mesh_spline.png]]
+#+end_w-2/3
+
+*** Terrain
+The first iteration of the terrain using Unity's built in terrain functionality
+was completed, but there were no textures yet. It was a simple green dynamic
+terrain that had a perlin noise attached to it, which can be seen in figure
+[[fig:unity_terrain]].
+
+#+begin_w-2/3
+#+CAPTION: Basic terrain dynamically created using built in Unity functionality
+#+NAME: fig:unity_terrain
+[[./images/week5/unity_terrain.png]]
+#+end_w-2/3
+
+*** Parks
+When it came to parks, we did not really mind what the final results would look
+like at this stage, all we wanted was to generate trees and foliage inside a
+polygon. We played around quite a bit with this, finding ways to connect a
+Perlin noise to the results and instead of generating a park we ended up
+generating a pretty neat looking forest. Take a look at figure [[fig:forest]].
+
+#+begin_w-2/3
+#+CAPTION: Park generator generating a... forest?
+#+NAME: fig:forest
+[[./images/week5/forest.png]]
+#+end_w-2/3
+
+At this stage, we were using low poly trees found for free on the Unity Asset
+store, but we switched this out at a later stage for more realistic trees.
+Still, it generated a pretty nice low-poly forest!
 
 * Week 4
 #+ATTR_HTML: :class notice-warning
@@ -404,18 +506,17 @@ which they will follow. One example of a road strategy that is used is the Paris
 or Manhattan strategy, which basically means the agents will walk around and
 place roads that mimic the structure of these cities.
 
+#+ATTR_HTML: :class columns-align-end
 #+begin_columns
-
 #+begin_column
 #+CAPTION: Road generation prototype using method 1
-[[./images/week2/img-000.png]]
+[[./images/week3/roadgen.png]]
 #+end_column
 
 #+begin_column
 #+CAPTION: Road generation with population map (dark is high density in this picture)
-[[./images/week2/popmap.png]]
+[[./images/week3/popmap.png]]
 #+end_column
-
 #+end_columns
 
 For the world generator, we defined a pipeline that the program will follow
