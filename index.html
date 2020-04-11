@@ -4,7 +4,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-04-10 Fri 13:48 -->
+<!-- 2020-04-11 Sat 16:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Project Log</title>
@@ -255,54 +255,79 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6a28b06">Introduction</a></li>
-<li><a href="#org78d7b19">Week 12</a>
+<li><a href="#org459c482">Introduction</a></li>
+<li><a href="#orgfd84541">Week 12</a>
 <ul>
-<li><a href="#org1fc11d7">Decisions</a></li>
+<li><a href="#orgbbd3861">Decisions</a></li>
+<li><a href="#org17a01ff">Writing</a></li>
+<li><a href="#org9c0ff59">Development</a>
+<ul>
+<li><a href="#org755af29">City generation</a></li>
+<li><a href="#orgccf3887">GUI changes</a></li>
 </ul>
 </li>
-<li><a href="#org993dbab">Week 11</a></li>
-<li><a href="#orgf4f81d1">Week 10</a></li>
-<li><a href="#org953cc2c">Week 9</a></li>
-<li><a href="#org92506c8">Week 8</a></li>
-<li><a href="#org8ade77e">Week 7</a></li>
-<li><a href="#orgec8a77c">Week 6</a></li>
-<li><a href="#org615ae5a">Week 5</a></li>
-<li><a href="#orga990c59">Week 4</a>
+<li><a href="#org6c50c6e">Problems and solutions</a>
 <ul>
-<li><a href="#org4979154">Decisions</a></li>
-<li><a href="#orga43444b">Meeting, writing and assignments</a></li>
-<li><a href="#org4f8a79c">Discussion and decisions</a></li>
+<li><a href="#orgde588bd">City placement</a></li>
+<li><a href="#org2087c90">Performance</a></li>
 </ul>
 </li>
-<li><a href="#orgd77e76a">Week 3</a>
-<ul>
-<li><a href="#org4e88464">Decisions</a></li>
-<li><a href="#orgbf8a839">Tools</a></li>
-<li><a href="#org231b488">Report, Project plan and Terminology</a></li>
-<li><a href="#orge99feba">Development</a></li>
-<li><a href="#org85ca12d">Overall</a></li>
 </ul>
 </li>
-<li><a href="#org9d37a32">Week 2</a>
+<li><a href="#org652f106">Week 11</a>
 <ul>
-<li><a href="#orgfff72fb">Decisions</a></li>
-<li><a href="#org9e1d9fa">Discussion and planning</a></li>
+<li><a href="#org60bb82d">Decisions</a></li>
+<li><a href="#orgf5274e6">Writing</a></li>
+<li><a href="#org07eb07b">Development</a>
+<ul>
+<li><a href="#orgdaa1062">Buildings</a></li>
+<li><a href="#orga32c90f">GUI</a></li>
+<li><a href="#org91e1ba9">Road and park path mesh</a></li>
 </ul>
 </li>
-<li><a href="#org1ad592d">Week 1</a>
+</ul>
+</li>
+<li><a href="#orgd33436c">Week 10</a></li>
+<li><a href="#org2d8f4f8">Week 9</a></li>
+<li><a href="#org8c4e0b8">Week 8</a></li>
+<li><a href="#orge4da1ed">Week 7</a></li>
+<li><a href="#orgb4cf6e2">Week 6</a></li>
+<li><a href="#org6acc817">Week 5</a></li>
+<li><a href="#orge8a5e7d">Week 4</a>
 <ul>
-<li><a href="#orgb8da7ec">Decisions</a></li>
-<li><a href="#orgf8242ab">Meetings and research.</a></li>
+<li><a href="#org4c67c3e">Decisions</a></li>
+<li><a href="#orgf4ec18a">Meeting, writing and assignments</a></li>
+<li><a href="#org14b61b7">Discussion and decisions</a></li>
+</ul>
+</li>
+<li><a href="#orgd3bab9b">Week 3</a>
+<ul>
+<li><a href="#org3512d22">Decisions</a></li>
+<li><a href="#org1d823d1">Tools</a></li>
+<li><a href="#orge5d5e1d">Report, Project plan and Terminology</a></li>
+<li><a href="#orgcbb8092">Development</a></li>
+<li><a href="#org8025220">Overall</a></li>
+</ul>
+</li>
+<li><a href="#org7f8db1d">Week 2</a>
+<ul>
+<li><a href="#org1f2e8ac">Decisions</a></li>
+<li><a href="#org6af3952">Discussion and planning</a></li>
+</ul>
+</li>
+<li><a href="#orga4c9db6">Week 1</a>
+<ul>
+<li><a href="#orge75315d">Decisions</a></li>
+<li><a href="#orgd831cce">Meetings and research.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org6a28b06" class="outline-2">
-<h2 id="org6a28b06">Introduction</h2>
-<div class="outline-text-2" id="text-org6a28b06">
+<div id="outline-container-org459c482" class="outline-2">
+<h2 id="org459c482">Introduction</h2>
+<div class="outline-text-2" id="text-org459c482">
 <p>
 This page will consist of the collaborative log from each group member and
 eventual problems and challenges that the group encounters during the
@@ -317,20 +342,26 @@ written here.
 </div>
 </div>
 
-<div id="outline-container-org78d7b19" class="outline-2">
-<h2 id="org78d7b19">Week 12</h2>
-<div class="outline-text-2" id="text-org78d7b19">
-<div class="notice-error notice">
+<div id="outline-container-orgfd84541" class="outline-2">
+<h2 id="orgfd84541">Week 12</h2>
+<div class="outline-text-2" id="text-orgfd84541">
+<div class="notice-warning notice">
 <p>
-This section has not been written yet!
+This section is a work in progress
 </p>
 
 </div>
+
+<p>
+As usual, this week had the regular meetings with the group and the supervisor,
+where we asked a few questions that we had, such as how obligatory attendance
+works now during home-studies because of the Coronavirus.
+</p>
 </div>
 
-<div id="outline-container-org1fc11d7" class="outline-3">
-<h3 id="org1fc11d7">Decisions</h3>
-<div class="outline-text-3" id="text-org1fc11d7">
+<div id="outline-container-orgbbd3861" class="outline-3">
+<h3 id="orgbbd3861">Decisions</h3>
+<div class="outline-text-3" id="text-orgbbd3861">
 <div class="decisions">
 <ul class="org-ul">
 <li>Group summaries are now written directly into the project log document, rather
@@ -340,48 +371,263 @@ than in the Google Sheet first.</li>
 </div>
 </div>
 </div>
+
+<div id="outline-container-org17a01ff" class="outline-3">
+<h3 id="org17a01ff">Writing</h3>
+<div class="outline-text-3" id="text-org17a01ff">
+<p>
+Jacob has continued his report writing and spent almost the entire week writing
+on the final report. Some chapters have gotten a good start already, such as the
+theory, introduction and the background chapter. So far, 12 pages has been
+written.
+Our goal is that everyone gets started writing on the final report next week.
+</p>
+</div>
 </div>
 
-
-<div id="outline-container-org993dbab" class="outline-2">
-<h2 id="org993dbab">Week 11</h2>
-<div class="outline-text-2" id="text-org993dbab">
-<div class="notice-error notice">
+<div id="outline-container-org9c0ff59" class="outline-3">
+<h3 id="org9c0ff59">Development</h3>
+<div class="outline-text-3" id="text-org9c0ff59">
 <p>
-This section has not been rewritten yet!
+At this point, most of our generators were implemented into the full pipeline
+resulting in a pretty good looking city. We spent a lot of time tuning
+parameters to improve the overall look of the city and analysed the results to
+find bugs and inconsistencies.
+</p>
+</div>
+
+<div id="outline-container-org755af29" class="outline-4">
+<h4 id="org755af29">City generation</h4>
+<div class="outline-text-4" id="text-org755af29">
+<p>
+The block, plot and building generation
+now makes use of a population density map which previously were only used for
+highways to &ldquo;guide&rdquo; the roads into other cities or high-density areas.
+</p>
+
+<p>
+Amplifiers were also introduced to the population map, which basically lets us
+modify the noise output. For example, when cities are placed, the population map
+will get a circular amplifier in the middle of the city, which will increase the
+population density closer to the center of the city.
+</p>
+
+<p>
+City generation starting points and size were previously hard-coded into the
+code, but now there is a feature to select points in the world while generating.
+This means we can now control where cities are generated which means we can
+place them in positions that might not be suitable for cities, to see what it
+results in.
+</p>
+
+<p>
+Roads now have dedicated sidewalks and they are also correctly projected onto
+the terrain rather than clipping through it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgccf3887" class="outline-4">
+<h4 id="orgccf3887">GUI changes</h4>
+<div class="outline-text-4" id="text-orgccf3887">
+<p>
+The GUI got a few updates to improve user experience. Now, the user cannot
+proceed to the next state before the current state has generated something, and
+the GUI is also disabled while the generator is running, if the generator is an
+asynchronous one.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6c50c6e" class="outline-3">
+<h3 id="org6c50c6e">Problems and solutions</h3>
+<div class="outline-text-3" id="text-org6c50c6e">
+</div>
+<div id="outline-container-orgde588bd" class="outline-4">
+<h4 id="orgde588bd">City placement</h4>
+<div class="outline-text-4" id="text-orgde588bd">
+<p>
+One problem that was discovered was that placing cities in water would create
+isolated road nodes that had no connections, this was quickly fixed by letting
+agents who start in water wander for a few steps before terminating, and if they
+encounter land they start their &ldquo;real&rdquo; road generation.
+</p>
+
+<p>
+Also, isolated cities did not get their mesh created because the mesh generator
+initiates from a single node and traverses through the network, which means some
+networks that are isolated would not be reached.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2087c90" class="outline-4">
+<h4 id="org2087c90">Performance</h4>
+<div class="outline-text-4" id="text-org2087c90">
+<p>
+We quickly noticed performance issues when the city had been fully
+generated. In an attempt to fix this, some of us were profiling and analysing
+our code to see potential performance hickups.
+</p>
+
+<p>
+We found that some of our code intended for debugging still did work even though
+we had turned off debugging. Most generators has for loops to visualize what it
+generates, in the form of lines. To draw these lines, we used for loops with a
+debug check, but the check was performed inside the loop rather than
+encapsulating the entire loop.
+Simply moving the debug check to the for loop gave us significant performance
+boosts.
+</p>
+
+<p>
+However, there are still lots of performance issues when the city is finished
+generating, and this is due to the amount of triangles rendered in the scene.
+But we have seen Unity projects render far more than what we have, with much
+better performance, so we need to dig deeper into the engine and find out what
+optimizations exists that we are not making use of.
+One thought that comes to mind is the fact that our content is dynamic, and
+thus, occlusion culling would not work since that requires the developer to
+pre-bake occlusion data.
+</p>
+
+<p>
+Alexander spent some time researching these optimizations and found that one
+solution might be to merge meshes together. Having one mesh for all buildings
+and roads, or at least separated into chunks, might give a significant boost,
+but no actual implementation and testing has been done as of yet.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org652f106" class="outline-2">
+<h2 id="org652f106">Week 11</h2>
+<div class="outline-text-2" id="text-org652f106">
+<div class="notice-warning notice">
+<p>
+This section is a work in progress
 </p>
 
 </div>
 
 <p>
-Jacob added a skyscraper generator, 5 pages were written on the Theory chapter
-(Noise, L-systems, Search-based PCG and Voronoi Diagrams). Marcus has finished
-the terrain options: terrain offset and sea level sliders. Using the sliders,
-sea level can be adjusted and the user can move along the terrain by entering a
-speed given to the sliders.
+During the meeting with the supervisor, we asked regarding our current project
+log, which was just a Google Sheet which included our own individual efforts as
+well as a summary of the progress of the week. We heard from another group that
+they had a very dedicated project log that they received praise from the
+examinator for, which is why we wanted to ask if we should do the same.
+We shared the other group&rsquo;s project log with our supervisor and he said it was
+much better than what we had, so we decided to do something similar.
+</p>
+
+<p>
+This is the project log that we decided to write, and all weeks prior to this is
+simply rewritten from our short summary of that week, a combination of our
+individual efforts, as well as from memory.
+</p>
+</div>
+
+<div id="outline-container-org60bb82d" class="outline-3">
+<h3 id="org60bb82d">Decisions</h3>
+<div class="outline-text-3" id="text-org60bb82d">
+<div class="decisions">
+<ul class="org-ul">
+<li>A more dedicated project log for the progress of each week should be written.
+Alexander is assigned to doing this task.</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf5274e6" class="outline-3">
+<h3 id="orgf5274e6">Writing</h3>
+<div class="outline-text-3" id="text-orgf5274e6">
+<p>
+Jacob has spent some time this wek for the report, notably the theory chapter
+which now has descriptions of Noise, L-systems, Search-based PCG and Voronoi
+diagrams.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org07eb07b" class="outline-3">
+<h3 id="org07eb07b">Development</h3>
+<div class="outline-text-3" id="text-org07eb07b">
+</div>
+<div id="outline-container-orgdaa1062" class="outline-4">
+<h4 id="orgdaa1062">Buildings</h4>
+<div class="outline-text-4" id="text-orgdaa1062">
+<p>
+Building and block generation has gotten a lot of improvements.
+Alexander implemented block and plot type classification based on the size of
+the block / plot, which lets us give the blocks / plots more variety in the
+city.
+Jacob added a skyscraper generator which is generated inside skyscraper plots
+which are randomly assigned from the plot generator.
+</p>
+
+<p>
+Theodor has started creating what will be the final structure of the
+BuildingGenerator, which includes the ability to generate any type of building
+with different kinds of strategies and will give the city much more variety when
+it comes to buildings.
+</p>
+
+<p>
+Most generators have receive the updates to allow them to project their results
+onto the terrain now, such as the ParkGenerator which will project the paths in
+the park up to the terrain, similar to what the roads do.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga32c90f" class="outline-4">
+<h4 id="orga32c90f">GUI</h4>
+<div class="outline-text-4" id="text-orga32c90f">
+<p>
+Marcus has finished the terrain options: terrain offset and sea level sliders.
+The sea level of the world can be adjusted with the sliders and the user can
+also navigate along the terrain by adjusting the terrain offset speed slider.
+</p>
+
+<p>
 Alexander worked with improving generation in the UI, like separating the road
-and street generation and also implemented block and plot types so that
-different things can be generated like parks or skyscrapers.
+and street generation so that the user can re-generate the roads if the results
+does not satisfy their needs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org91e1ba9" class="outline-4">
+<h4 id="org91e1ba9">Road and park path mesh</h4>
+<div class="outline-text-4" id="text-org91e1ba9">
+<p>
 Anton has also been making improvements on the generated road network mesh. This
 includes resolving bugs for specific intersections cases that caused the
 intersections and roads to stretch and occupy the whole world. Furthermore, the
 same problem was solved for a bug where duplicate identical roads were being
-instantiated. The roads also try to project onto the terrain. The projection on
-to the terrain is still a work in progress as some segements of the roads appear
-underneath the terrain which needs to be resolved next week.
-Work has been started with creating what will be the final structure of
-BuildingGenerator. The ability of generating any type of building with different
-kinds of strategy. Viktor has made sure to get his paths and parks working with
-the terrain. He also added a collision-check for the paths and worked on
-different algorithms for the paths.&ldquo;
-a
+instantiated. The roads also try to project onto the terrain, which is still a
+work in progress as some segements of the roads appear underneath the terrain
+which needs to be resolved next week.
+</p>
+
+<p>
+In addition to that, Viktor and Anton adapted and generalized the road mesh to
+be used for parks as well since the previous method of creating roads were
+dependent on the Unity editor, for the built-in terrain.
 </p>
 </div>
 </div>
+</div>
+</div>
 
-<div id="outline-container-orgf4f81d1" class="outline-2">
-<h2 id="orgf4f81d1">Week 10</h2>
-<div class="outline-text-2" id="text-orgf4f81d1">
+<div id="outline-container-orgd33436c" class="outline-2">
+<h2 id="orgd33436c">Week 10</h2>
+<div class="outline-text-2" id="text-orgd33436c">
 <div class="notice-error notice">
 <p>
 This section has not been rewritten yet!
@@ -406,9 +652,9 @@ intersections(WIP).
 </div>
 </div>
 
-<div id="outline-container-org953cc2c" class="outline-2">
-<h2 id="org953cc2c">Week 9</h2>
-<div class="outline-text-2" id="text-org953cc2c">
+<div id="outline-container-org2d8f4f8" class="outline-2">
+<h2 id="org2d8f4f8">Week 9</h2>
+<div class="outline-text-2" id="text-org2d8f4f8">
 <div class="notice-error notice">
 <p>
 This section has not been rewritten yet!
@@ -422,9 +668,9 @@ This section has not been rewritten yet!
 </div>
 </div>
 
-<div id="outline-container-org92506c8" class="outline-2">
-<h2 id="org92506c8">Week 8</h2>
-<div class="outline-text-2" id="text-org92506c8">
+<div id="outline-container-org8c4e0b8" class="outline-2">
+<h2 id="org8c4e0b8">Week 8</h2>
+<div class="outline-text-2" id="text-org8c4e0b8">
 <div class="notice-error notice">
 <p>
 This section has not been rewritten yet!
@@ -453,9 +699,9 @@ around the city.
 </div>
 </div>
 
-<div id="outline-container-org8ade77e" class="outline-2">
-<h2 id="org8ade77e">Week 7</h2>
-<div class="outline-text-2" id="text-org8ade77e">
+<div id="outline-container-orge4da1ed" class="outline-2">
+<h2 id="orge4da1ed">Week 7</h2>
+<div class="outline-text-2" id="text-orge4da1ed">
 <div class="notice-error notice">
 <p>
 This section has not been rewritten yet!
@@ -479,9 +725,9 @@ feature to the terrain and tweak the textures.
 </div>
 </div>
 
-<div id="outline-container-orgec8a77c" class="outline-2">
-<h2 id="orgec8a77c">Week 6</h2>
-<div class="outline-text-2" id="text-orgec8a77c">
+<div id="outline-container-orgb4cf6e2" class="outline-2">
+<h2 id="orgb4cf6e2">Week 6</h2>
+<div class="outline-text-2" id="text-orgb4cf6e2">
 <div class="notice-error notice">
 <p>
 This section has not been rewritten yet!
@@ -507,9 +753,9 @@ major concern.
 </div>
 </div>
 
-<div id="outline-container-org615ae5a" class="outline-2">
-<h2 id="org615ae5a">Week 5</h2>
-<div class="outline-text-2" id="text-org615ae5a">
+<div id="outline-container-org6acc817" class="outline-2">
+<h2 id="org6acc817">Week 5</h2>
+<div class="outline-text-2" id="text-org6acc817">
 <div class="notice-warning notice">
 <p>
 This section is work in progress!
@@ -528,9 +774,9 @@ that resembles the mock. Anton worked on generating a road mesh following a
 </div>
 </div>
 
-<div id="outline-container-orga990c59" class="outline-2">
-<h2 id="orga990c59">Week 4</h2>
-<div class="outline-text-2" id="text-orga990c59">
+<div id="outline-container-orge8a5e7d" class="outline-2">
+<h2 id="orge8a5e7d">Week 4</h2>
+<div class="outline-text-2" id="text-orge8a5e7d">
 <div class="notice-warning notice">
 <p>
 This section is work in progress!
@@ -553,9 +799,9 @@ well-written and together made up one coherent text.
 </p>
 </div>
 
-<div id="outline-container-org4979154" class="outline-3">
-<h3 id="org4979154">Decisions</h3>
-<div class="outline-text-3" id="text-org4979154">
+<div id="outline-container-org4c67c3e" class="outline-3">
+<h3 id="org4c67c3e">Decisions</h3>
+<div class="outline-text-3" id="text-org4c67c3e">
 <div class="decisions">
 <ul class="org-ul">
 <li>We decided to not pursue the Wave Function Collapse type of procedural
@@ -566,9 +812,9 @@ generation for roads.</li>
 </div>
 </div>
 
-<div id="outline-container-orga43444b" class="outline-3">
-<h3 id="orga43444b">Meeting, writing and assignments</h3>
-<div class="outline-text-3" id="text-orga43444b">
+<div id="outline-container-orgf4ec18a" class="outline-3">
+<h3 id="orgf4ec18a">Meeting, writing and assignments</h3>
+<div class="outline-text-3" id="text-orgf4ec18a">
 <p>
 Another meeting with Staffan resulted in very constructive feedback regarding
 our current project plan up to this week.
@@ -596,9 +842,9 @@ more.
 </div>
 </div>
 
-<div id="outline-container-org4f8a79c" class="outline-3">
-<h3 id="org4f8a79c">Discussion and decisions</h3>
-<div class="outline-text-3" id="text-org4f8a79c">
+<div id="outline-container-org14b61b7" class="outline-3">
+<h3 id="org14b61b7">Discussion and decisions</h3>
+<div class="outline-text-3" id="text-org14b61b7">
 <p>
 This week we discussed more methods and algorithms that are commonly used in
 procedurally generated content. Wave Function Collapse came up as a possible
@@ -626,13 +872,13 @@ very experienced in the machine learning field and thus we decided to skip this.
 </div>
 </div>
 
-<div id="outline-container-orgd77e76a" class="outline-2">
-<h2 id="orgd77e76a">Week 3</h2>
-<div class="outline-text-2" id="text-orgd77e76a">
+<div id="outline-container-orgd3bab9b" class="outline-2">
+<h2 id="orgd3bab9b">Week 3</h2>
+<div class="outline-text-2" id="text-orgd3bab9b">
 </div>
-<div id="outline-container-org4e88464" class="outline-3">
-<h3 id="org4e88464">Decisions</h3>
-<div class="outline-text-3" id="text-org4e88464">
+<div id="outline-container-org3512d22" class="outline-3">
+<h3 id="org3512d22">Decisions</h3>
+<div class="outline-text-3" id="text-org3512d22">
 <div class="decisions">
 <ul class="org-ul">
 <li>The Agent-based method for road generation is the one we are going to use.</li>
@@ -656,9 +902,9 @@ the group.</li>
 </div>
 </div>
 
-<div id="outline-container-orgbf8a839" class="outline-3">
-<h3 id="orgbf8a839">Tools</h3>
-<div class="outline-text-3" id="text-orgbf8a839">
+<div id="outline-container-org1d823d1" class="outline-3">
+<h3 id="org1d823d1">Tools</h3>
+<div class="outline-text-3" id="text-org1d823d1">
 <p>
 Unity and C# are by far the easiest tools to use for our project, and it suits
 our needs completely. Some of us are already familiar with Unity and C#.
@@ -678,9 +924,9 @@ project.
 </div>
 </div>
 
-<div id="outline-container-org231b488" class="outline-3">
-<h3 id="org231b488">Report, Project plan and Terminology</h3>
-<div class="outline-text-3" id="text-org231b488">
+<div id="outline-container-orge5d5e1d" class="outline-3">
+<h3 id="orge5d5e1d">Report, Project plan and Terminology</h3>
+<div class="outline-text-3" id="text-orge5d5e1d">
 <p>
 For the most part, this week was spent writing the project plan and the first
 draft was quickly completed in order to get feedback from the supervisor.
@@ -697,9 +943,9 @@ they can be found in the project plan / report.
 </div>
 </div>
 
-<div id="outline-container-orge99feba" class="outline-3">
-<h3 id="orge99feba">Development</h3>
-<div class="outline-text-3" id="text-orge99feba">
+<div id="outline-container-orgcbb8092" class="outline-3">
+<h3 id="orgcbb8092">Development</h3>
+<div class="outline-text-3" id="text-orgcbb8092">
 <p>
 The first method of road generation turned out to be best suited for our
 project, but the second method will be considered for plot generation in the
@@ -750,9 +996,9 @@ whole.
 </div>
 </div>
 
-<div id="outline-container-org85ca12d" class="outline-3">
-<h3 id="org85ca12d">Overall</h3>
-<div class="outline-text-3" id="text-org85ca12d">
+<div id="outline-container-org8025220" class="outline-3">
+<h3 id="org8025220">Overall</h3>
+<div class="outline-text-3" id="text-org8025220">
 <p>
 It was useful to get a lot of work done this early and we quickly got a
 perspective of how the city generation would work. Lots of great feedback from
@@ -763,18 +1009,18 @@ the algorithm.
 </div>
 </div>
 
-<div id="outline-container-org9d37a32" class="outline-2">
-<h2 id="org9d37a32">Week 2</h2>
-<div class="outline-text-2" id="text-org9d37a32">
+<div id="outline-container-org7f8db1d" class="outline-2">
+<h2 id="org7f8db1d">Week 2</h2>
+<div class="outline-text-2" id="text-org7f8db1d">
 <p>
 This week also had a few lectures, and Alexander also came back from his
 vacation so we made sure to get him up to date.
 </p>
 </div>
 
-<div id="outline-container-orgfff72fb" class="outline-3">
-<h3 id="orgfff72fb">Decisions</h3>
-<div class="outline-text-3" id="text-orgfff72fb">
+<div id="outline-container-org1f2e8ac" class="outline-3">
+<h3 id="org1f2e8ac">Decisions</h3>
+<div class="outline-text-3" id="text-org1f2e8ac">
 <div class="decisions">
 <ul class="org-ul">
 <li>Theodor is responsible for the meeting agenda but does not have to be
@@ -790,9 +1036,9 @@ that was missed.</li>
 </div>
 </div>
 
-<div id="outline-container-org9e1d9fa" class="outline-3">
-<h3 id="org9e1d9fa">Discussion and planning</h3>
-<div class="outline-text-3" id="text-org9e1d9fa">
+<div id="outline-container-org6af3952" class="outline-3">
+<h3 id="org6af3952">Discussion and planning</h3>
+<div class="outline-text-3" id="text-org6af3952">
 <p>
 Lots of subjects were brought up during the workshops this week, such as what
 method we wanted to use for different parts in the world generator.
@@ -824,9 +1070,9 @@ more ticouldme.
 </div>
 </div>
 
-<div id="outline-container-org1ad592d" class="outline-2">
-<h2 id="org1ad592d">Week 1</h2>
-<div class="outline-text-2" id="text-org1ad592d">
+<div id="outline-container-orga4c9db6" class="outline-2">
+<h2 id="orga4c9db6">Week 1</h2>
+<div class="outline-text-2" id="text-orga4c9db6">
 <p>
 This week marks the start of the project, and thus a lot of research and
 administrative tasks had to be done, such as decisions regarding tools and
@@ -842,9 +1088,9 @@ reading right now.
 </p>
 </div>
 
-<div id="outline-container-orgb8da7ec" class="outline-3">
-<h3 id="orgb8da7ec">Decisions</h3>
-<div class="outline-text-3" id="text-orgb8da7ec">
+<div id="outline-container-orge75315d" class="outline-3">
+<h3 id="orge75315d">Decisions</h3>
+<div class="outline-text-3" id="text-orge75315d">
 <div class="decisions">
 <ul class="org-ul">
 <li>The secretary during the meetings should be rotated according to this order:
@@ -885,9 +1131,9 @@ separate Github repositories for version control.
 </div>
 </div>
 
-<div id="outline-container-orgf8242ab" class="outline-3">
-<h3 id="orgf8242ab">Meetings and research.</h3>
-<div class="outline-text-3" id="text-orgf8242ab">
+<div id="outline-container-orgd831cce" class="outline-3">
+<h3 id="orgd831cce">Meetings and research.</h3>
+<div class="outline-text-3" id="text-orgd831cce">
 <p>
 We got to meet our supervisor, Staffan, during this week which guided us to get a good
 start with the project, and we were also able to ask any questions we had before

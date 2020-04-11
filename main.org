@@ -27,10 +27,14 @@ week and everything will be then compose into one shared log which will be
 written here.
 
 * Week 12
-#+ATTR_HTML: :class notice-error
+#+ATTR_HTML: :class notice-warning
 #+begin_notice
-This section has not been written yet!
+This section is a work in progress
 #+end_notice
+
+As usual, this week had the regular meetings with the group and the supervisor,
+where we asked a few questions that we had, such as how obligatory attendance
+works now during home-studies because of the Coronavirus.
 
 ** Decisions
 #+begin_decisions
@@ -38,34 +42,150 @@ This section has not been written yet!
   than in the Google Sheet first.
 #+end_decisions
 
+** Writing
+Jacob has continued his report writing and spent almost the entire week writing
+on the final report. Some chapters have gotten a good start already, such as the
+theory, introduction and the background chapter. So far, 12 pages has been
+written.
+Our goal is that everyone gets started writing on the final report next week.
+
+** Development
+At this point, most of our generators were implemented into the full pipeline
+resulting in a pretty good looking city. We spent a lot of time tuning
+parameters to improve the overall look of the city and analysed the results to
+find bugs and inconsistencies.
+
+*** City generation
+The block, plot and building generation
+now makes use of a population density map which previously were only used for
+highways to "guide" the roads into other cities or high-density areas.
+
+Amplifiers were also introduced to the population map, which basically lets us
+modify the noise output. For example, when cities are placed, the population map
+will get a circular amplifier in the middle of the city, which will increase the
+population density closer to the center of the city.
+
+City generation starting points and size were previously hard-coded into the
+code, but now there is a feature to select points in the world while generating.
+This means we can now control where cities are generated which means we can
+place them in positions that might not be suitable for cities, to see what it
+results in.
+
+Roads now have dedicated sidewalks and they are also correctly projected onto
+the terrain rather than clipping through it.
+
+*** GUI changes
+The GUI got a few updates to improve user experience. Now, the user cannot
+proceed to the next state before the current state has generated something, and
+the GUI is also disabled while the generator is running, if the generator is an
+asynchronous one.
+
+** Problems and solutions
+*** City placement
+One problem that was discovered was that placing cities in water would create
+isolated road nodes that had no connections, this was quickly fixed by letting
+agents who start in water wander for a few steps before terminating, and if they
+encounter land they start their "real" road generation.
+
+Also, isolated cities did not get their mesh created because the mesh generator
+initiates from a single node and traverses through the network, which means some
+networks that are isolated would not be reached.
+
+*** Performance
+We quickly noticed performance issues when the city had been fully
+generated. In an attempt to fix this, some of us were profiling and analysing
+our code to see potential performance hickups.
+
+We found that some of our code intended for debugging still did work even though
+we had turned off debugging. Most generators has for loops to visualize what it
+generates, in the form of lines. To draw these lines, we used for loops with a
+debug check, but the check was performed inside the loop rather than
+encapsulating the entire loop.
+Simply moving the debug check to the for loop gave us significant performance
+boosts.
+
+However, there are still lots of performance issues when the city is finished
+generating, and this is due to the amount of triangles rendered in the scene.
+But we have seen Unity projects render far more than what we have, with much
+better performance, so we need to dig deeper into the engine and find out what
+optimizations exists that we are not making use of.
+One thought that comes to mind is the fact that our content is dynamic, and
+thus, occlusion culling would not work since that requires the developer to
+pre-bake occlusion data.
+
+Alexander spent some time researching these optimizations and found that one
+solution might be to merge meshes together. Having one mesh for all buildings
+and roads, or at least separated into chunks, might give a significant boost,
+but no actual implementation and testing has been done as of yet.
 
 * Week 11
-#+ATTR_HTML: :class notice-error
+#+ATTR_HTML: :class notice-warning
 #+begin_notice
-This section has not been rewritten yet!
+This section is a work in progress
 #+end_notice
 
-Jacob added a skyscraper generator, 5 pages were written on the Theory chapter
-(Noise, L-systems, Search-based PCG and Voronoi Diagrams). Marcus has finished
-the terrain options: terrain offset and sea level sliders. Using the sliders,
-sea level can be adjusted and the user can move along the terrain by entering a
-speed given to the sliders.
+During the meeting with the supervisor, we asked regarding our current project
+log, which was just a Google Sheet which included our own individual efforts as
+well as a summary of the progress of the week. We heard from another group that
+they had a very dedicated project log that they received praise from the
+examinator for, which is why we wanted to ask if we should do the same.
+We shared the other group's project log with our supervisor and he said it was
+much better than what we had, so we decided to do something similar.
+
+This is the project log that we decided to write, and all weeks prior to this is
+simply rewritten from our short summary of that week, a combination of our
+individual efforts, as well as from memory.
+
+** Decisions
+#+begin_decisions
+- A more dedicated project log for the progress of each week should be written.
+  Alexander is assigned to doing this task.
+#+end_decisions
+
+** Writing
+Jacob has spent some time this wek for the report, notably the theory chapter
+which now has descriptions of Noise, L-systems, Search-based PCG and Voronoi
+diagrams.
+
+** Development
+*** Buildings
+Building and block generation has gotten a lot of improvements.
+Alexander implemented block and plot type classification based on the size of
+the block / plot, which lets us give the blocks / plots more variety in the
+city.
+Jacob added a skyscraper generator which is generated inside skyscraper plots
+which are randomly assigned from the plot generator.
+
+Theodor has started creating what will be the final structure of the
+BuildingGenerator, which includes the ability to generate any type of building
+with different kinds of strategies and will give the city much more variety when
+it comes to buildings.
+
+Most generators have receive the updates to allow them to project their results
+onto the terrain now, such as the ParkGenerator which will project the paths in
+the park up to the terrain, similar to what the roads do.
+
+*** GUI
+Marcus has finished the terrain options: terrain offset and sea level sliders.
+The sea level of the world can be adjusted with the sliders and the user can
+also navigate along the terrain by adjusting the terrain offset speed slider.
+
 Alexander worked with improving generation in the UI, like separating the road
-and street generation and also implemented block and plot types so that
-different things can be generated like parks or skyscrapers.
+and street generation so that the user can re-generate the roads if the results
+does not satisfy their needs.
+
+*** Road and park path mesh
 Anton has also been making improvements on the generated road network mesh. This
 includes resolving bugs for specific intersections cases that caused the
 intersections and roads to stretch and occupy the whole world. Furthermore, the
 same problem was solved for a bug where duplicate identical roads were being
-instantiated. The roads also try to project onto the terrain. The projection on
-to the terrain is still a work in progress as some segements of the roads appear
-underneath the terrain which needs to be resolved next week.
-Work has been started with creating what will be the final structure of
-BuildingGenerator. The ability of generating any type of building with different
-kinds of strategy. Viktor has made sure to get his paths and parks working with
-the terrain. He also added a collision-check for the paths and worked on
-different algorithms for the paths."
-a
+instantiated. The roads also try to project onto the terrain, which is still a
+work in progress as some segements of the roads appear underneath the terrain
+which needs to be resolved next week.
+
+In addition to that, Viktor and Anton adapted and generalized the road mesh to
+be used for parks as well since the previous method of creating roads were
+dependent on the Unity editor, for the built-in terrain.
 
 * Week 10
 #+ATTR_HTML: :class notice-error
