@@ -26,6 +26,34 @@ Usually, the group will write their own individual efforts at the end of the
 week and everything will be then compose into one shared log which will be
 written here.
 
+* Week 13
+#+ATTR_HTML: :class notice-warning
+#+begin_notice
+This section is a work in progress
+#+end_notice
+
+** Decisions
+#+begin_decisions
+- This iteration lasts until the day before the final report should be turned
+  in (2 weeks), therefore the focus will be on writing.
+- The group members will focus on the subjects in the report in Methods and
+  Results according to the following:
+  - Problems (Jacob)
+  - Tools (Anton)
+  - Process and Workflow (Idk)
+  - Application (Jacob)
+  - Terrain (Marcus)
+  - Population (Marcus)
+  - Road (Alexander + Anton)
+  - Street (Alex)
+  - Block (Jacob)
+  - Plot (Theodor)
+  - Building (Theodor)
+  - Park (Viktor)
+  - Parking (Viktor)
+- Excess time goes to writing discussions chapter
+#+end_decisions
+
 * Week 12
 #+ATTR_HTML: :class notice-warning
 #+begin_notice
@@ -168,7 +196,7 @@ individual efforts, as well as from memory.
 #+end_decisions
 
 ** Writing
-Jacob has spent some time this wek for the report, notably the theory chapter
+Jacob has spent some time this week for the report, notably the theory chapter
 which now has descriptions of Noise, L-systems, Search-based PCG and Voronoi
 diagrams.
 
@@ -220,7 +248,7 @@ This section has not been rewritten yet!
 
 In this week, Marcus has worked on the UI for the terrain generator, adding sea
 level, x offset and z offset as modifiable options. A lot of PRs were
-reviewed/merged such as Mesh Terrain, Noise module, plots and buildings. We aso
+reviewed/merged such as Mesh Terrain, Noise module, plots and buildings. We also
 started on the final report and wrote about noise in the Theory chapter. Viktor
 spent this week adding the Park Generator to the World Generator and doing a
 little bit of report writing. We started doing daily meetings online.
