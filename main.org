@@ -290,6 +290,11 @@ textures and such.
 Marcus has been working slightly on camera movement so that the user can look
 around the city.
 
+** Decisions
+#+begin_decisions
+- glTF export should be used instead of FBX
+#+end_decisions
+
 * Week 7
 #+ATTR_HTML: :class notice-error
 #+begin_notice
@@ -310,30 +315,6 @@ feature to the terrain and tweak the textures.
 
 ** Decisions
 #+begin_decisions
-- glTF export should be used instead of FBX
-#+end_decisions
-* Week 6
-#+ATTR_HTML: :class notice-error
-#+begin_notice
-This section has not been rewritten yet!
-#+end_notice
-
-In this week everyone kept working on the generators from last week and
-improving them. Viktor and Anton also spent time on preparing the half-time
-presentation.  The progress in output from the generators will be provided as
-images, and more detailed descriptions of how the work progress looked like will
-be given in the individual week-logs. Although a very rough draft of it the road
-generation logic from Anton and Alexander has started to be merged together. The
-park generator is currently in hiatus as Viktor and Theodor work together on
-implementing a polygon divider. We have working CI builds and linters now. We
-have proper terrain, population, road, park, building (only 1 building type
-though). We lack plot and block generator. We also lack a parking generator, but
-that wasn't included in the scope of this iteration. Next week we will start a
-new iteration. The current FBX exporter only works in editor runtime which is a
-major concern.
-
-** Decisions
-#+begin_decisions
 - Next iteration should consist of the following subjects:
   - Terrain texture splatting
   - Terrain lakes/oceans
@@ -347,6 +328,125 @@ major concern.
   - Plot generation
   - Building generation (L-Systems?)
 #+end_decisions
+* Week 6
+#+ATTR_HTML: :class notice-warning
+#+begin_notice
+This section is work in progress!
+#+end_notice
+
+In this week everyone kept working on the generators from last week and
+improving them. Viktor and Anton also spent time on preparing the half-time
+presentation.  The progress in output from the generators will be provided as
+images, and more detailed descriptions of how the work progress looked like will
+be given in the individual week-logs.
+
+Although a very rough draft of it the road
+generation logic from Anton and Alexander has started to be merged together. The
+park generator is currently in hiatus as Viktor and Theodor work together on
+implementing a polygon divider. We have working CI builds and linters now.
+
+As per previous week decisions regarding this iteration, everyone spent this
+time working on their own generator tasks. The progress that was made during
+this week will be listed in the respective sections below.
+
+Currently we lack a plot and block generator, but they are on their way. First,
+the basic logic for creating blocks and plots needs to be implemented before a
+generator can be created for it. Jacob, Theodor and Viktor is working on this.
+A parking generator is also missing, which is something we want to implement,
+however it is not included in the scope of this iteration.
+
+The half time presentation would be held next week, so Anton and Viktor spent
+time preparing for it. It consisted of our goals and current progress of the
+project.
+
+** Development
+*** CI & Linters
+Jacob has managed to set up a working CI for compiling the project using Github
+actions, as well as a linter than will make sure every part of the project code
+has the same code style, for the sake of consistency.
+Right now, the linter is difficult to set up on a Windows machine, so it is
+mostly Jacob running the linter on the pull requests, or someone that has a
+Linux environment.
+
+*** Terrain
+The terrain generator is now no longer implementing its own noise generation,
+since there is now a standalone noise generator component that can be used with
+any other generator easily. It supports specifing multiple layers with different
+frequencies, magnitude and exponential factors, which gives us the ability to
+fine tune and adjust any generator with great flexibility.
+
+The terrain is currenly hooked up to this noise generator and one result of this
+can be seen in figure [[fig:terrain_noise_component]]. The example in the figure
+does not have a layer for adding great detail, and is mostly configured for
+generating a rough terrain shape. One can add such a layer to give the result a
+more realistic and detailed look, but it would also require a higher terrain
+mesh resolution.
+
+#+begin_w-responsive
+#+CAPTION: Terrain generator using the new noise generator component (GIF).
+#+NAME: fig:terrain_noise_component
+[[./images/week6/terrain_noise.gif]]
+#+end_w-responsive
+
+*** Road generation
+A lot of progress has been made on the road mesh generation and it has started
+getting merged together with the road network. There are still a lot of issues
+and missing pieces, but Anton and Alexander has worked together to try and solve
+this.
+
+Alexander has created an Agent strategy for generating streets now, as can be
+seen in figure [[fig:unity_streets_gen]]. This is an improved version of what was
+used in the prototype, and the roads generated from this strategy are marked as
+streets rather than regular roads. This is useful for the road mesh to identify
+what is a main road and what is a street.
+
+#+begin_w-responsive
+#+CAPTION: Street strategy branching off from main roads. (GIF)
+#+NAME: fig:unity_streets_gen
+[[./images/week6/unity_road_gen.gif]]
+#+end_w-responsive
+
+*** Parks
+We dumped the old low-poly trees since we going for a more realistic aesthetics,
+so Viktor started using an asset called [[https://assetstore.unity.com/packages/3d/vegetation/trees/realistic-tree-9-rainbow-tree-54622]["Realistic Tree 9 [Rainbow Tree]"]] on the Unity Asset Store that creates
+procedurally generated trees.
+
+He also added a restriction to trees by giving each tree a radius that blocks
+other trees from generating in close proximity (see figure
+[[fig:procedural_trees]]).
+
+#+begin_w-responsive
+#+CAPTION: Procedurally generated trees and tree radius
+#+NAME: fig:procedural_trees
+[[./images/week6/park_tree_radius.png]]
+#+end_w-responsive
+
+*** Plot generation
+#+begin_columns
+#+begin_column
+Viktor took a break with the park generator to help Theodor with a polygon
+splitter library. This was required to start implementing a plot generator,
+which main goal is taking polygons and splitting it into multiple plots.
+See figure [[fig:basic_polygon_splitter]].
+#+end_column
+#+begin_column
+#+CAPTION: Basic polygon splitter in action
+#+NAME: fig:basic_polygon_splitter
+[[./images/week6/polygon_splitting.png]]
+#+end_column
+#+end_columns
+
+The reason this is necessary is because the road network sometimes results in
+very large blocks, and a solution for that is to split it into multiple plots.
+This would also result the appearance of more variation since each plot could
+have a different type of building or building height, for example.
+
+** Problems and concerns
+The current FBX exporter is still depending on the Unity Editor. This is a major
+concern and currently blocks us from our goal of having a standalone binary. We
+need to look into alternatives or else we have to change our goals and explain
+why it would not work. Jacob is searching for other ways at the moment and
+hopefully has a solution next week.
 
 * Week 5
 #+ATTR_HTML: :class notice-warning
