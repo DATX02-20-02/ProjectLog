@@ -288,23 +288,111 @@ working well in the current city block system, as can be seen in Figure
 #+end_w-responsive
 
 * Week 10
-#+ATTR_HTML: :class notice-error
+#+ATTR_HTML: :class notice-warning
 #+begin_notice
-This section has not been rewritten yet!
+This section is a work in progress
 #+end_notice
 
 In this week, Marcus has worked on the UI for the terrain generator, adding sea
-level, x offset and z offset as modifiable options. A lot of PRs were
-reviewed/merged such as Mesh Terrain, Noise module, plots and buildings. We also
-started on the final report and wrote about noise in the Theory chapter. Viktor
-spent this week adding the Park Generator to the World Generator and doing a
-little bit of report writing. We started doing daily meetings online.
-Alexander worked on the road generation so that it now adjusts based on terrain
-slopes and sea level in such a way that it doesn't enter seas or tries to ascend
-to steep hills. This week Anton spent on reworking the generated road meshes
+level, x offset and z offset as modifiable options.
+A lot of PRs were reviewed/merged such as Mesh Terrain, Noise module, plots and
+buildings.
+
+We also started on the final report and wrote about noise in the Theory chapter.
+
+Viktor spent this week adding the Park Generator to the World Generator and doing a
+little bit of report writing.
+
+This week Anton spent on reworking the generated road meshes
 (simplifying by removing crosssection, only road width and sidewalk now) and
 tweaking the intersections to a way that more similarily resembled CityEngine's
 intersections(WIP).
+
+** Decisions
+#+begin_decisions
+- We started having meetings online rather than in person, because of COVID-19.
+#+end_decisions
+
+** Writing
+The group has started working on the final report and has written about noise in
+the theory chapter so far.
+The plan is that the next upcoming weeks should be a mix of writing on the
+report, as well as implementing more features and bugfixes in the application.
+
+** Development
+*** Plot
+The city sometimes create very large blocks, so the purpose of the plot
+generator is subdividing these blocks into smaller, more manageable blocks.
+This feature is not partly implemented, as can be seen in Figure
+[[fig:basic_plot_generator]], however, one issue we noticed is that it only
+subdivides smaller blocks into two rather than big blocks into multiple
+(depending on how many fit).
+This issue is to be addressed at a later stage because we want to focus on the
+other generators.
+
+#+begin_w-responsive
+#+CAPTION: Basic building generation with incorrect normals.
+#+NAME: fig:basic_plot_generator
+[[./images/week10/plot_generator.png]]
+#+end_w-responsive
+
+*** Buildings
+The building generation has gotten a few implementations this week, and it is
+currently able to extrude the plots in the city to form very basic buildings.
+In Figure [[fig:basic_building_generator]], there are basic building meshes in
+place, however note that the normal vectors of the vertices are not correctly
+calculated because vertices are shared between walls, something that it should
+not be doing.
+This was fixed during the last few days of the weeks and can be seen in Figure
+[[fig:agent_water_check]].
+
+#+begin_w-responsive
+#+CAPTION: Basic building generation with incorrect normals.
+#+NAME: fig:basic_building_generator
+[[./images/week10/building_generator.png]]
+#+end_w-responsive
+
+*** Roads
+The road generator was working pretty well at this point, but it was by far
+finished.
+One problem was that Agents could still step into water and traverse steep
+slopes, something that is not very realistic in real life.
+Alexander spent parts of this week fixing these issues by implementing terrain
+normal approximations to the noise generator, allowing the Agents to detect the
+slope of the ground.
+Agent now also avoid stepping into water by checking the elevation and comparing
+it to the sea level. Both of these fixes are demonstrated in Figure
+[[fig:agent_water_check]] and [[fig:agent_slope_check]].
+
+#+ATTR_HTML: :class columns-align-end
+#+begin_columns
+#+begin_column
+#+CAPTION: Agents avoiding stepping into water.
+#+NAME: fig:agent_water_check
+[[./images/week10/agent_water_check.png]]
+#+end_column
+
+#+begin_column
+#+CAPTION: Agents avoiding steep slopes.
+#+NAME: fig:agent_slope_check
+[[./images/week10/agent_slope_check.png]]
+#+end_column
+#+end_columns
+
+*** Road mesh
+Anton has managed to create a first prototype of the road mesh.
+The first iteration of the road mesh involves creating roads between nodes, and
+ignoring intersections and advanced sidewalks for now.
+These will be implemented in the upcoming weeks, however, there is a good
+foundation to build upon currently, as can be seen in Figure [[fig:road_mesh_intersection]].
+
+#+begin_w-responsive
+#+CAPTION: Road mesh and start of intersections
+#+NAME: fig:city_buildings_parks
+[[./images/week10/road_mesh_intersection.png]]
+#+end_w-responsive
+
+*** Building generator
 
 * Week 9
 #+ATTR_HTML: :class notice-error
