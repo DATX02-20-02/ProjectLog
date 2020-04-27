@@ -201,6 +201,10 @@ which now has descriptions of Noise, L-systems, Search-based PCG and Voronoi
 diagrams.
 
 ** Development
+Most generators have received updates to allow them to project their results
+onto the terrain now, such as the ParkGenerator which will project the paths in
+the park up to the terrain, similar to what the roads do.
+
 *** Buildings
 Building and block generation has gotten a lot of improvements.
 Alexander implemented block and plot type classification based on the size of
@@ -211,21 +215,39 @@ which are randomly assigned from the plot generator.
 
 Theodor has started creating what will be the final structure of the
 BuildingGenerator, which includes the ability to generate any type of building
-with different kinds of strategies and will give the city much more variety when
-it comes to buildings.
+with different kinds of rules and will give the city much more variety when
+it comes to buildings. See Figure [[fig:building_l_systems]] and [[fig:building_l_systems_wireframe]].
 
-Most generators have receive the updates to allow them to project their results
-onto the terrain now, such as the ParkGenerator which will project the paths in
-the park up to the terrain, similar to what the roads do.
+#+ATTR_HTML: :class columns-align-end
+#+begin_columns
+#+begin_column
+#+CAPTION: Wall generation using L-Systems in wireframe.
+#+NAME: fig:building_l_systems_wireframe
+[[./images/week11/building_l_systems_wireframe.png]]
+#+end_column
+
+#+begin_column
+#+CAPTION: Wall generation using L-Systems.
+#+NAME: fig:building_l_systems
+[[./images/week11/building_l_systems.png]]
+#+end_column
+#+end_columns
 
 *** GUI
 Marcus has finished the terrain options: terrain offset and sea level sliders.
 The sea level of the world can be adjusted with the sliders and the user can
 also navigate along the terrain by adjusting the terrain offset speed slider.
+See Figure [[fig:terrain_sealevel_gui]].
+
+#+begin_w-responsive
+#+CAPTION: Terrain options in GUI.
+#+NAME: fig:terrain_sealevel_gui
+[[./images/week11/terrain_sealevel.gif]]
+#+end_w-responsive
 
 Alexander worked with improving generation in the UI, like separating the road
-and street generation so that the user can re-generate the roads if the results
-does not satisfy their needs.
+and street generation so that the user can re-generate the roads or streets
+individually if the results does not satisfy their needs.
 
 *** Road and park path mesh
 Anton has also been making improvements on the generated road network mesh. This
@@ -234,11 +256,36 @@ intersections and roads to stretch and occupy the whole world. Furthermore, the
 same problem was solved for a bug where duplicate identical roads were being
 instantiated. The roads also try to project onto the terrain, which is still a
 work in progress as some segements of the roads appear underneath the terrain
-which needs to be resolved next week.
+which needs to be resolved next week. Figures [[fig:road_mesh_intersection]] and
+[[fig:road_mesh_terrain]] demonstrates Anton's progress this week.
+
+
+#+ATTR_HTML: :class columns-align-end
+#+begin_columns
+#+begin_column
+#+CAPTION: Road intersection mesh.
+#+NAME: fig:road_mesh_intersection
+[[./images/week11/road_mesh_intersection.png]]
+#+end_column
+
+#+begin_column
+#+CAPTION: Road mesh projected on the terrain.
+#+NAME: fig:road_mesh_terrain
+[[./images/week11/road_mesh_terrain.png]]
+#+end_column
+#+end_columns
 
 In addition to that, Viktor and Anton adapted and generalized the road mesh to
 be used for parks as well since the previous method of creating roads were
-dependent on the Unity editor, for the built-in terrain.
+dependent on the Unity editor, for the built-in terrain. The new parks are
+working well in the current city block system, as can be seen in Figure
+[[fig:city_buildings_parks]].
+
+#+begin_w-responsive
+#+CAPTION: Buildings and parks so far in the city.
+#+NAME: fig:city_buildings_parks
+[[./images/week11/city_buildings_parks.png]]
+#+end_w-responsive
 
 * Week 10
 #+ATTR_HTML: :class notice-error
@@ -376,7 +423,7 @@ frequencies, magnitude and exponential factors, which gives us the ability to
 fine tune and adjust any generator with great flexibility.
 
 The terrain is currenly hooked up to this noise generator and one result of this
-can be seen in figure [[fig:terrain_noise_component]]. The example in the figure
+can be seen in Figure [[fig:terrain_noise_component]]. The example in the figure
 does not have a layer for adding great detail, and is mostly configured for
 generating a rough terrain shape. One can add such a layer to give the result a
 more realistic and detailed look, but it would also require a higher terrain
@@ -408,8 +455,8 @@ what is a main road and what is a street.
 
 *** Parks
 We dumped the old low-poly trees since we going for a more realistic aesthetics,
-so Viktor started using an asset called [[https://assetstore.unity.com/packages/3d/vegetation/trees/realistic-tree-9-rainbow-tree-54622]["Realistic Tree 9 [Rainbow Tree]"]] on the Unity Asset Store that creates
-procedurally generated trees.
+so Viktor started using an asset called [[https://assetstore.unity.com/packages/3d/vegetation/trees/realistic-tree-9-rainbow-tree-54622]["Realistic Tree 9 [Rainbow Tree]"]] on the
+Unity Asset Store that creates procedurally generated trees.
 
 He also added a restriction to trees by giving each tree a radius that blocks
 other trees from generating in close proximity (see figure
@@ -427,7 +474,7 @@ other trees from generating in close proximity (see figure
 Viktor took a break with the park generator to help Theodor with a polygon
 splitter library. This was required to start implementing a plot generator,
 which main goal is taking polygons and splitting it into multiple plots.
-See figure [[fig:basic_polygon_splitter]].
+See Figure [[fig:basic_polygon_splitter]].
 #+end_column
 #+begin_column
 #+CAPTION: Basic polygon splitter in action
@@ -485,7 +532,7 @@ moment.
 The road intersection logic that was created in the prototype had issues, so it
 was necessary to set up a dedicated testing environment for all possible cases
 that can occurr. So in Unity, Alexander created a playground that lets you put
-down nodes with your mouse, which can be seen in figure
+down nodes with your mouse, which can be seen in Figure
 [[fig:road_intersection_test]], which also demonstrates the RTree used in action.
 The previous prototype were using a Quadtree which resulted in far worse
 performance than an RTree.
@@ -501,7 +548,7 @@ could depend on working in the final generation.
 
 Finally, when the intersection was working like we wanted to, it was time to put
 it to the test, so we hooked it into the Agent generator and it worked pretty
-seamlessly. The results can be seen in figure [[fig:paris_generation]].
+seamlessly. The results can be seen in Figure [[fig:paris_generation]].
 Of course, there is always bound to be bugs, which we discovered during a later
 stage in development.
 
@@ -523,7 +570,7 @@ stage in development.
 When it comes to the road mesh, we needed it to be smooth enough to not see the
 rough imperfections of the road network. So we resorted to a simple curbic
 Bezier curve, which works by interpolating values between two positions and two
-control points. The basic road mesh that resulted from this is seen in figure
+control points. The basic road mesh that resulted from this is seen in Figure
 [[fig:basic_bezier_road_mesh]].
 
 #+begin_w-responsive
@@ -535,7 +582,7 @@ control points. The basic road mesh that resulted from this is seen in figure
 *** Terrain
 The first iteration of the terrain using Unity's built in terrain functionality
 was completed, but there were no textures yet. It was a simple green dynamic
-terrain that had a perlin noise attached to it, which can be seen in figure
+terrain that had a perlin noise attached to it, which can be seen in Figure
 [[fig:unity_terrain]].
 
 #+begin_w-responsive
@@ -549,7 +596,7 @@ When it came to parks, we did not really mind what the final results would look
 like at this stage, all we wanted was to generate trees and foliage inside a
 polygon. We played around quite a bit with this, finding ways to connect a
 Perlin noise to the results and instead of generating a park we ended up
-generating a pretty neat looking forest. Take a look at figure [[fig:forest]].
+generating a pretty neat looking forest. Take a look at Figure [[fig:forest]].
 
 #+begin_w-responsive
 #+CAPTION: Park generator generating a... forest?
