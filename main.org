@@ -452,32 +452,20 @@ finished next week.
 
 
 * Week 7
-#+ATTR_HTML: :class notice-error
+#+ATTR_HTML: :class notice-warning
 #+begin_notice
-This section has not been rewritten yet!
+This section is work in progress!
 #+end_notice
 
-1. In this week Anton and Viktor held the halftime presentation.
-Viktor spent most of the rest of the week after that working on the PathGenerator for the parks,
-he was also assisted by Anton.
+During this week, Anton and Viktor held the halftime presentation, and the rest
+of the group members were there to see other group presentations.
 
-2. Anton worked on coupling the generated road network with the spline and road mesh logic(Heavily Assisted by Alexander).
-Furthermore, he also has spent some time on generating a more complex shape for
-the road mesh (WIP).
-
-3. Jacob wrote on the polygon extractor part of the block
-generator.
-
-4. Alex and Jacob merged road generation functionalilty and block gen
-inset stuff.
-
-5. Alex implemented the block gen inset stuff.
-
-6. Jacob got a .GLTF and .GLB exporter to work in runtime. There seems to be some limis to the new
-exporter, but it works better than the last one.
-
-7. Marcus worked on adding water
-feature to the terrain and tweak the textures.
+It was pretty interesting to see which projects the other groups had, as well as
+seeing and comparing what the group that has the same project as us had
+accomplished.
+Something that was also interesting was that while our early focus involved the
+road generation, since we deemed that to be the most complex to get right, the
+other group focused on the terrain generator.
 
 ** Decisions
 #+begin_decisions
@@ -494,6 +482,94 @@ feature to the terrain and tweak the textures.
   - Plot generation
   - Building generation (L-Systems?)
 #+end_decisions
+
+** Development
+*** Terrain
+The terrain needed water, so Marcus implemented this into the application.
+The sea level can be adjusted to a specific height, which would later be
+implemented into the user interface, but for now is adjusted in the Unity
+Editor inspector. See Figure [[fig:terrain_sea_level]].
+
+#+begin_w-responsive
+#+CAPTION: Terrain sea level
+#+NAME: fig:terrain_sea_level
+[[./images/week7/terrain_sealevel.gif]]
+#+end_w-responsive
+
+*** Roads
+The first iteration of the road spline was finally created by Anton this week.
+Figure [[fig:road_spline]] shows the first spline interpolated between several
+nodes in a smooth manner.
+
+#+begin_w-responsive
+#+CAPTION: The road spline interpolated using Bezier splines
+#+NAME: fig:road_spline
+[[./images/week7/road_spline.gif]]
+#+end_w-responsive
+
+It was time to couple the spline and road mesh logic with the rest of the road
+generator, which is exactly what Anton spent this week doing.
+In order to generate the road mesh, the entire road network needed to be
+traversed in such a way that duplicate roads were not created.
+Another requirement that Anton and Alexander focused on with this was that roads
+that did not have any intersections would only be one spline, rather than having
+a spline for every connection.
+So, after many implementations, Alexander and Anton managed to get a working
+road network traverser which created simple boxes on every road connection,
+which is demonstrated in [[fig:road_mesh_traverser]].
+
+#+begin_w-responsive
+#+CAPTION: The road mesh generator traversing the network, finding all connected roads.
+#+NAME: fig:road_mesh_traverser
+[[./images/week7/road_mesh_traverser.gif]]
+#+end_w-responsive
+
+*** Blocks
+Alexander developed the block inset functionality which was required to make
+sure roads did not intersect with buildings.
+The function was then applied to all blocks in the entire city, shown in Figure
+[[fig:block_inset_city]].
+At first, we were worried that the block generator would be a relatively slow
+process, but that was not the case after testing.
+Insetting arbitrary polygons is a very expensive process if done correctly,
+since it requires a so called Straight Skeleton ([[https://en.wikipedia.org/wiki/Straight_skeleton][Straight Skeleton on
+Wikipedia]]).
+However, this algorithm is very advanced and way beyond the scope of this
+project to implement, so the group decided to use the Clipper library, which
+handles insetting relatively well and is quite optimized as well.
+
+#+begin_w-responsive
+#+CAPTION: Block inset function
+#+NAME: fig:block_inset_city
+[[./images/week7/block_inset_city2.png]]
+#+end_w-responsive
+
+*** Parks
+Anton and Viktor worked on the park generator, getting the park paths to work
+with the terrain.
+In Figure [[fig:week7_park_generator]] and Figure [[fig:week7_park_generator2]], the
+paths are using some features found in the dynamic mesh.
+Since the plan is to get rid of the dynamic mesh, this needs to be changed to
+work with the new terrain mesh.
+
+Anton and Viktor discussed how this would work, and ended up waiting for the
+road mesh to work with the terrain.
+The idea was that once the road mesh work, they might be able to apply it to the
+park paths as well, which is exactly what they ended up doing in the next couple
+of weeks.
+
+#+begin_columns
+#+begin_column
+#+CAPTION: Park generator
+#+NAME: fig:week7_park_generator
+[[./images/week7/park_generator.png]]
+#+end_column
+#+begin_column
+#+CAPTION: Park generator seen from above
+#+NAME: fig:week7_park_generator2
+[[./images/week7/park_generator2.png]]
+#+end_column
+#+end_columns
 * Week 6
 #+ATTR_HTML: :class notice-warning
 #+begin_notice
