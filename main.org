@@ -395,40 +395,61 @@ foundation to build upon currently, as can be seen in Figure [[fig:road_mesh_int
 *** Building generator
 
 * Week 9
-#+ATTR_HTML: :class notice-error
-#+begin_notice
-This section has not been rewritten yet!
-#+end_notice
-
-<Exam week>
+This week was the examination week, and as such, we decided that only the
+members that felt that they could justify spending time on the project would do
+so.
+However, in the end, no one had time to work on anything and preferred to study
+for their exams.
 
 * Week 8
-#+ATTR_HTML: :class notice-error
+#+ATTR_HTML: :class notice-warning
 #+begin_notice
-This section has not been rewritten yet!
+This section is work in progress!
 #+end_notice
-
-This week Anton worked on creating intersections between roads. At the moment
-the outline of the intersection looks reasonable - however, no actual complete
-mesh is generated except for the arc ""corners"" between two roads entering the
-intersection.
-Alexander has worked on a general noise generator component that can be used in
-many parts of the application, and also implemented the noise in the road
-generation to create highways outside cities that are guided towards high
-populated areas.
-Jacob worked on FBX -> glTF for terrain since FBX didn't work without depending
-on UnityEditor. Since Unity's terrain is dynamic it doesn't work well in
-exporting as model, you can convert it to a mesh but that also requires
-UnityEditor. Thus, Jacob worked a lot on converting this terrain into a
-mesh-based one, integrating it with noise module, and supporting multiple
-textures and such.
-Marcus has been working slightly on camera movement so that the user can look
-around the city.
 
 ** Decisions
 #+begin_decisions
 - glTF export should be used instead of FBX
 #+end_decisions
+
+** Development
+This week consisted of a lot of individual work to get the generators working on
+their own.
+Since we had trouble exporting the model, which was a main goal of the project,
+Jacob continued to work on the glTF exporter.
+However, since the terrain still depended on the UnityEditor package because of
+the dynamic mesh that we were using, this week he mainly focused on finding
+alternative solutions to the terrain.
+
+So, with the addition of Alexander's work on the generalized Noise component,
+Jacob integrated the new noise into the terrain generator.
+The dynamic mesh can be converted to a regular mesh that the exporter would work
+with, but that also requires the UnityEditor package.
+So the only alternative is creating the mesh entirely on our own, which is not
+really a problem since it is a pretty trivial task.
+However, a lot of more complex features that the dynamic mesh offers would
+obviously not be supported in the new terrain mesh, but that is a compromise we
+need to take to achieve our exporting goal
+The new mesh resulted in a very reliable export feature that supported
+everything that was required in the project.
+
+The application needed a way for the user to move around, so Marcus worked on
+implementing a camera movement script.
+
+*** Roads
+Using the Noise component that Alexander developed, he implemented it into the
+road generator by creating a highway strategy.
+The point of this strategy was simply have the roads react according to the
+population map, which used the Noise component.
+By guiding the highways towards higher population dense areas, the road network
+tended to connect to other cities, which was a nice side-effect.
+
+*** Road mesh
+Anton has been working hard with the road generator mesh and getting it to work
+with the road network.
+However there is still no intersection mesh ready and we hope it will be
+finished next week.
+
 
 * Week 7
 #+ATTR_HTML: :class notice-error
@@ -436,16 +457,26 @@ around the city.
 This section has not been rewritten yet!
 #+end_notice
 
-In this week Anton and Viktor held the halftime presentation. Viktor spent most
-of the rest of the week after that working on the PathGenerator for the parks,
-he was also assisted by Anton. Anton worked on coupling the generated road
-network with the spline and road mesh logic(Heavily Assisted by Alexander).
+1. In this week Anton and Viktor held the halftime presentation.
+Viktor spent most of the rest of the week after that working on the PathGenerator for the parks,
+he was also assisted by Anton.
+
+2. Anton worked on coupling the generated road network with the spline and road mesh logic(Heavily Assisted by Alexander).
 Furthermore, he also has spent some time on generating a more complex shape for
-the road mesh (WIP). Jacob wrote on the polygon extractor part of the block
-generator. Alex and Jacob merged road generation functionalilty and block gen
-inset stuff. Alex implemented the block gen inset stuff. Jacob got a .GLTF and
-.GLB exporter to work in runtime. There seems to be some limis to the new
-exporter, but it works better than the last one. Marcus worked on adding water
+the road mesh (WIP).
+
+3. Jacob wrote on the polygon extractor part of the block
+generator.
+
+4. Alex and Jacob merged road generation functionalilty and block gen
+inset stuff.
+
+5. Alex implemented the block gen inset stuff.
+
+6. Jacob got a .GLTF and .GLB exporter to work in runtime. There seems to be some limis to the new
+exporter, but it works better than the last one.
+
+7. Marcus worked on adding water
 feature to the terrain and tweak the textures.
 
 ** Decisions
