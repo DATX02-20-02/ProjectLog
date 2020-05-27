@@ -26,11 +26,58 @@ Usually, the group will write their own individual efforts at the end of the
 week and everything will be then compose into one shared log which will be
 written here.
 
+* Week 16
+#+ATTR_HTML: :class notice-warning
+#+begin_notice
+This section is a work in progress
+#+end_notice
+
+#+BEGIN_COMMENT
+Final report done. (yay!)
+#+END_COMMENT
+
+* Week 15
+#+ATTR_HTML: :class notice-warning
+#+begin_notice
+This section is a work in progress
+#+end_notice
+
+#+BEGIN_COMMENT
+Road LOD done
+Spiny skyscrapers fixed
+Broken plot division from week 10 fixed. The library we had chosen
+had some problems and we had made some of our own as well.
+Buildings finalized and optimized with LOD and mesh merges.
+#+END_COMMENT
+
+* Week 14
+#+ATTR_HTML: :class notice-warning
+#+begin_notice
+This section is a work in progress
+#+end_notice
+
+#+BEGIN_COMMENT
+Lots of report writing
+Terrain color gradient adjusted to now correctly contain snowy mountains
+Fixed stone/tree/bush not appearing in parks
+#+END_COMMENT
+
 * Week 13
 #+ATTR_HTML: :class notice-warning
 #+begin_notice
 This section is a work in progress
 #+end_notice
+
+
+#+BEGIN_COMMENT
+Massive performance boost once we found out and fixed textures that were imported at extremely high resolutions.
+Since full resolution will be used when we export we chose to reduce the resolutions significantly for the
+real-time generation and rendering.
+
+Progress on Methods chapters.
+A better approx rectangle for polygons with 4 vertices.
+Road user input
+#+END_COMMENT
 
 ** Decisions
 #+begin_decisions
@@ -53,6 +100,12 @@ This section is a work in progress
   - Parking (Viktor)
 - Excess time goes to writing discussions chapter
 #+end_decisions
+
+#+BEGIN_COMMENT
+Background chapter finished
+Terrain size can now be changed from the GUI
+Restructure of Methods chapter due to feedback from fackspråk and the first pages of this chapter are almost done.
+#+END_COMMENT
 
 * Week 12
 #+ATTR_HTML: :class notice-warning
@@ -80,7 +133,7 @@ Our goal is that everyone gets started writing on the final report next week.
 ** Development
 At this point, most of our generators were implemented into the full pipeline
 resulting in a pretty good looking city. We spent a lot of time tuning
-parameters to improve the overall look of the city and analysed the results to
+parameters to improve the overall look of the city and analyzed the results to
 find bugs and inconsistencies.
 
 *** City generation
@@ -104,12 +157,12 @@ the terrain rather than clipping through it.
 
 *** Buildings
 Theodor has come a long way with new building generator which aims to replace
-the white blocks we got in our old generator. By using an L-system for
+the white blocky buildings we got in our old generator. By using an L-system for
 generating the walls, we can get an incredible amount of flexibility in the
 aesthetics of the buildings. We can set up rules depending on the floor, the
 size, basically anything to generate different walls.
-Currently, there are only some different types of wall segments but this can be
-extended whenever.
+Currently, there are only a few different types of wall segments but this can be
+extended in the future.
 
 #+begin_w-responsive
 #+CAPTION: Theodor's building generator
@@ -117,10 +170,12 @@ extended whenever.
 #+end_w-responsive
 
 *** Export
-Something that Jacob got working several weeks ago was finally put to the test,
+Something that Jacob got working several weeks ago was finally put to the real test,
 the export function. We generated a complete city and exported it and the
 results were quite nice. Textures are working fine and we now know for sure that
 the export functionality will work fine with the whole city generated.
+Note, the small buildings are still white blocks since the L-system PR
+has not been merged yet.
 
 #+begin_w-responsive
 #+CAPTION: Exported mesh rendered in Blender
@@ -128,7 +183,7 @@ the export functionality will work fine with the whole city generated.
 #+end_w-responsive
 
 *** GUI changes
-The GUI got a few updates to improve user experience. Now, the user cannot
+The GUI got a few updates to improve user experience. Now, the user can not
 proceed to the next state before the current state has generated something, and
 the GUI is also disabled while the generator is running, if the generator is an
 asynchronous one.
@@ -138,7 +193,7 @@ asynchronous one.
 One problem that was discovered was that placing cities in water would create
 isolated road nodes that had no connections, this was quickly fixed by letting
 agents who start in water wander for a few steps before terminating, and if they
-encounter land they start their "real" road generation.
+encounter land they start their "real" road generation there.
 
 Also, isolated cities did not get their mesh created because the mesh generator
 initiates from a single node and traverses through the network, which means some
@@ -146,19 +201,18 @@ networks that are isolated would not be reached.
 
 *** Performance
 We quickly noticed performance issues when the city had been fully
-generated. In an attempt to fix this, some of us were profiling and analysing
+generated. In an attempt to fix this, some of us were profiling and analyzing
 our code to see potential performance hickups.
 
 We found that some of our code intended for debugging still did work even though
-we had turned off debugging. Most generators has for loops to visualize what it
-generates, in the form of lines. To draw these lines, we used for loops with a
+we had turned off debugging. Most generators had for-loops to visualize what they
+generate, in the form of lines. To draw these lines, we used for-loops with a
 debug check, but the check was performed inside the loop rather than
 encapsulating the entire loop.
-Simply moving the debug check to the for loop gave us significant performance
-boosts.
+Simply moving the debug check to the for loop gave us some performance boosts.
 
 However, there are still lots of performance issues when the city is finished
-generating, and this is due to the amount of triangles rendered in the scene.
+generating. This is likely due to the amount of triangles rendered in the scene.
 But we have seen Unity projects render far more than what we have, with much
 better performance, so we need to dig deeper into the engine and find out what
 optimizations exists that we are not making use of.
@@ -177,32 +231,32 @@ but no actual implementation and testing has been done as of yet.
 This section is a work in progress
 #+end_notice
 
-During the meeting with the supervisor, we asked regarding our current project
+During the meeting with our supervisor, we asked regarding our current project
 log, which was just a Google Sheet which included our own individual efforts as
 well as a summary of the progress of the week. We heard from another group that
 they had a very dedicated project log that they received praise from the
 examinator for, which is why we wanted to ask if we should do the same.
 We shared the other group's project log with our supervisor and he said it was
-much better than what we had, so we decided to do something similar.
+much better than what we had, so we decided to do something similar (this).
 
 This is the project log that we decided to write, and all weeks prior to this is
-simply rewritten from our short summary of that week, a combination of our
-individual efforts, as well as from memory.
+simply rewritten from our short summary of those weeks, a combination of our
+individual logs/efforts, as well as from memory.
 
 ** Decisions
 #+begin_decisions
 - A more dedicated project log for the progress of each week should be written.
-  Alexander is assigned to doing this task.
+  Alexander is assigned primary responsibility for this task.
 #+end_decisions
 
 ** Writing
-Jacob has spent some time this week for the report, notably the theory chapter
+Jacob has spent some time this week on the report, notably on the theory chapter
 which now has descriptions of Noise, L-systems, Search-based PCG and Voronoi
 diagrams.
 
 ** Development
 Most generators have received updates to allow them to project their results
-onto the terrain now, such as the ParkGenerator which will project the paths in
+onto the mesh terrain now, such as the ParkGenerator which will project the paths in
 the park up to the terrain, similar to what the roads do.
 
 *** Buildings
@@ -212,10 +266,13 @@ the block / plot, which lets us give the blocks / plots more variety in the
 city.
 Jacob added a skyscraper generator which is generated inside skyscraper plots
 which are randomly assigned from the plot generator.
+#+BEGIN_COMMENT
+Add gif of skyscrapers being generated and resized.
+#+END_COMMENT
 
 Theodor has started creating what will be the final structure of the
 BuildingGenerator, which includes the ability to generate any type of building
-with different kinds of rules and will give the city much more variety when
+with different kinds of rules (using L-systems) and will give the city much more variety when
 it comes to buildings. See Figure [[fig:building_l_systems]] and [[fig:building_l_systems_wireframe]].
 
 #+ATTR_HTML: :class columns-align-end
@@ -277,9 +334,10 @@ which needs to be resolved next week. Figures [[fig:road_mesh_intersection]] and
 
 In addition to that, Viktor and Anton adapted and generalized the road mesh to
 be used for parks as well since the previous method of creating roads were
-dependent on the Unity editor, for the built-in terrain. The new parks are
+dependent on the Unity editor, for the built-in terrain API. The new parks are
 working well in the current city block system, as can be seen in Figure
 [[fig:city_buildings_parks]].
+The paths inside the parks can look a bit weird at times though.
 
 #+begin_w-responsive
 #+CAPTION: Buildings and parks so far in the city.
@@ -298,8 +356,6 @@ level, x offset and z offset as modifiable options.
 A lot of PRs were reviewed/merged such as Mesh Terrain, Noise module, plots and
 buildings.
 
-We also started on the final report and wrote about noise in the Theory chapter.
-
 Viktor spent this week adding the Park Generator to the World Generator and doing a
 little bit of report writing.
 
@@ -314,8 +370,8 @@ intersections(WIP).
 #+end_decisions
 
 ** Writing
-The group has started working on the final report and has written about noise in
-the theory chapter so far.
+Jacob has started working on the final report and has setup the structure and
+written about noise in the Theory chapter so far.
 The plan is that the next upcoming weeks should be a mix of writing on the
 report, as well as implementing more features and bugfixes in the application.
 
@@ -323,7 +379,7 @@ report, as well as implementing more features and bugfixes in the application.
 *** Plot
 The city sometimes create very large blocks, so the purpose of the plot
 generator is subdividing these blocks into smaller, more manageable blocks.
-This feature is not partly implemented, as can be seen in Figure
+This feature is now partly implemented, as can be seen in Figure
 [[fig:basic_plot_generator]], however, one issue we noticed is that it only
 subdivides smaller blocks into two rather than big blocks into multiple
 (depending on how many fit).
@@ -353,11 +409,11 @@ This was fixed during the last few days of the weeks and can be seen in Figure
 #+end_w-responsive
 
 *** Roads
-The road generator was working pretty well at this point, but it was by far
+The road generator was working pretty well at this point, but it was far from
 finished.
 One problem was that Agents could still step into water and traverse steep
-slopes, something that is not very realistic in real life.
-Alexander spent parts of this week fixing these issues by implementing terrain
+slopes, something that is not very common in real life.
+Alexander spent part of this week fixing these issues by implementing terrain
 normal approximations to the noise generator, allowing the Agents to detect the
 slope of the ground.
 Agent now also avoid stepping into water by checking the elevation and comparing
@@ -393,6 +449,8 @@ foundation to build upon currently, as can be seen in Figure [[fig:road_mesh_int
 #+end_w-responsive
 
 *** Building generator
+    
+Normals were fixed as can be seen in Figure [[fig:agent_water_check]] and [[fig:agent_slope_check]].
 
 * Week 9
 This week was the examination week, and as such, we decided that only the
@@ -409,14 +467,14 @@ This section is work in progress!
 
 ** Decisions
 #+begin_decisions
-- glTF export should be used instead of FBX
+- glTF export will be used instead of FBX
 #+end_decisions
 
 ** Development
 This week consisted of a lot of individual work to get the generators working on
 their own.
 Since we had trouble exporting the model, which was a main goal of the project,
-Jacob continued to work on the glTF exporter.
+Jacob continued to work on the exporter (now exporting glTF instead of FBX).
 However, since the terrain still depended on the UnityEditor package because of
 the dynamic mesh that we were using, this week he mainly focused on finding
 alternative solutions to the terrain.
@@ -426,12 +484,14 @@ Jacob integrated the new noise into the terrain generator.
 The dynamic mesh can be converted to a regular mesh that the exporter would work
 with, but that also requires the UnityEditor package.
 So the only alternative is creating the mesh entirely on our own, which is not
-really a problem since it is a pretty trivial task.
-However, a lot of more complex features that the dynamic mesh offers would
-obviously not be supported in the new terrain mesh, but that is a compromise we
-need to take to achieve our exporting goal
-The new mesh resulted in a very reliable export feature that supported
-everything that was required in the project.
+a problem in itself since it is a pretty trivial task.
+However, a lot of complex features that the dynamic mesh offers will
+not be supported in the new terrain mesh, but that is a compromise we
+need to take to achieve our exporting goal.
+
+Jacob modifed the terrain generator to produce a custom mesh instead, and
+this new mesh resulted in a very reliable export feature that supported
+everything that would be required in the project.
 
 The application needed a way for the user to move around, so Marcus worked on
 implementing a camera movement script.
@@ -450,6 +510,10 @@ with the road network.
 However there is still no intersection mesh ready and we hope it will be
 finished next week.
 
+*** Plots
+
+Some bugs where discovered with the plot division. One of these was the Difference()
+function, which was resolved.
 
 * Week 7
 #+ATTR_HTML: :class notice-warning
@@ -458,9 +522,8 @@ This section is work in progress!
 #+end_notice
 
 During this week, Anton and Viktor held the halftime presentation, and the rest
-of the group members were there to see other group presentations.
-
-It was pretty interesting to see which projects the other groups had, as well as
+of the group members were there to see them and other group presentations as well.
+It was pretty interesting to see what projects other groups had, as well as
 seeing and comparing what the group that has the same project as us had
 accomplished.
 Something that was also interesting was that while our early focus involved the
@@ -525,8 +588,8 @@ which is demonstrated in [[fig:road_mesh_traverser]].
 #+end_w-responsive
 
 *** Blocks
-Alexander developed the block inset functionality which was required to make
-sure roads did not intersect with buildings.
+Jacob wrote the block generator and Alexander added the block inset functionality,
+which was required to make sure roads did not intersect with buildings.
 The function was then applied to all blocks in the entire city, shown in Figure
 [[fig:block_inset_city]].
 At first, we were worried that the block generator would be a relatively slow
@@ -537,6 +600,11 @@ Wikipedia]]).
 However, this algorithm is very advanced and way beyond the scope of this
 project to implement, so the group decided to use the Clipper library, which
 handles insetting relatively well and is quite optimized as well.
+
+For the extraction of blocks, we considered using a Minimal Cycle Basis (MCB)
+algorithm, but that would be way too slow due to their time complexities.
+Jacob realized that we could treat the graph as a geometric graph and thus
+achieve a significantly faster complexity by making use of this assumption.
 
 #+begin_w-responsive
 #+CAPTION: Block inset function
@@ -578,7 +646,7 @@ This section is work in progress!
 
 In this week everyone kept working on the generators from last week and
 improving them. Viktor and Anton also spent time on preparing the half-time
-presentation.  The progress in output from the generators will be provided as
+presentation. The progress in output from the generators will be provided as
 images, and more detailed descriptions of how the work progress looked like will
 be given in the individual week-logs.
 
@@ -597,7 +665,7 @@ generator can be created for it. Jacob, Theodor and Viktor is working on this.
 A parking generator is also missing, which is something we want to implement,
 however it is not included in the scope of this iteration.
 
-The half time presentation would be held next week, so Anton and Viktor spent
+The half-time presentation will be held next week, so Anton and Viktor spent
 time preparing for it. It consisted of our goals and current progress of the
 project.
 
@@ -606,9 +674,10 @@ project.
 Jacob has managed to set up a working CI for compiling the project using Github
 actions, as well as a linter than will make sure every part of the project code
 has the same code style, for the sake of consistency.
-Right now, the linter is difficult to set up on a Windows machine, so it is
-mostly Jacob running the linter on the pull requests, or someone that has a
-Linux environment.
+Right now, the linter is tricky to run locally on a Windows machine (due to Docker),
+so it is mostly Jacob running the linter on the pull requests, or someone that has a
+Linux environment. The benefit of running it locally is that the linter is not only
+able to detect mistakes, but it can auto-magically fix them as well.
 
 *** Terrain
 The terrain generator is now no longer implementing its own noise generation,
@@ -649,9 +718,9 @@ what is a main road and what is a street.
 #+end_w-responsive
 
 *** Parks
-We dumped the old low-poly trees since we going for a more realistic aesthetics,
-so Viktor started using an asset called [[https://assetstore.unity.com/packages/3d/vegetation/trees/realistic-tree-9-rainbow-tree-54622]["Realistic Tree 9 [Rainbow Tree]"]] on the
-Unity Asset Store that creates procedurally generated trees.
+We dumped the old low-poly trees since we going for a more realistic aesthetic,
+so Viktor started using an asset called [[https://assetstore.unity.com/packages/3d/vegetation/trees/realistic-tree-9-rainbow-tree-54622]["Realistic Tree 9 [Rainbow Tree]"]] from the
+Unity Asset Store that contains procedurally generated trees.
 
 He also added a restriction to trees by giving each tree a radius that blocks
 other trees from generating in close proximity (see figure
@@ -668,7 +737,7 @@ other trees from generating in close proximity (see figure
 #+begin_column
 Viktor took a break with the park generator to help Theodor with a polygon
 splitter library. This was required to start implementing a plot generator,
-which main goal is taking polygons and splitting it into multiple plots.
+whose main goal is taking polygons and splitting them into multiple plots.
 See Figure [[fig:basic_polygon_splitter]].
 #+end_column
 #+begin_column
@@ -713,13 +782,21 @@ moment.
   1. Anton + Alexander: Road and population map generation
   2. Theodor + Viktor: Plot and building generation
   3. Marcus: Terrain generation
-  4. General application functionality, block generation and possibly some CI.
+  4. Jacob: General application functionality, block generation and possibly some CI.
 - The aim of this iteration will be to develop a fully working pipeline, but the
   quality of each generator independently is not important.
-- We decided to not use Travis CI.
-- Unity version 2019.3.1f1 will be used by all group members.
-- A parking generator should be developed in the future.
-- An R-Tree will be investigated for road intersections rather than a quadtree.
+- We decided that we would not perform Unity builds on Travis CI since that would be too time consuming.
+- Unity version 2019.3.1f1 will be used by all group members throughout the project.
+- A parking generator should be developed in the future, but as of now we will focus on having:
+  - Terrain Generator
+  - Population Generator
+  - Road Generator
+  - Block Generator
+  - Plot Generator
+  - Building Generator
+  - Park Generator
+- An R-Tree will be investigated for road intersections rather than a quadtree or grid.
+- A Definition of Done will be used.
 #+end_decisions
 
 ** Development
@@ -728,9 +805,9 @@ The road intersection logic that was created in the prototype had issues, so it
 was necessary to set up a dedicated testing environment for all possible cases
 that can occurr. So in Unity, Alexander created a playground that lets you put
 down nodes with your mouse, which can be seen in Figure
-[[fig:road_intersection_test]], which also demonstrates the RTree used in action.
-The previous prototype were using a Quadtree which resulted in far worse
-performance than an RTree.
+[[fig:road_intersection_test]], which also demonstrates the tested RTree in action.
+The previous prototype used a Quadtree which resulted in far worse
+performance than this RTree.
 
 The reason an RTree was used was that it supports bounding boxes very well,
 which is not the case for a KD-Tree or a spatial grid. Quadtrees have too much
@@ -803,11 +880,13 @@ At this stage, we were using low poly trees found for free on the Unity Asset
 store, but we switched this out at a later stage for more realistic trees.
 Still, it generated a pretty nice low-poly forest!
 
+A Definition of Done was also written which could be followed to verify pull requests.
+
 ** Problems
 *** Export
 One feature that is necessary to get working early on, in order to save
 ourselves from trouble in the future is export functionality. So, Jacob has
-attempted to get FBX export to work in runtime. The problem is that the built in
+attempted to get FBX export to work in runtime. The problem is that the built-in
 FBX exporter depends on Unity Editor code, but the goal is that our application
 should work compiled, without any editor dependencies.
 
@@ -822,15 +901,16 @@ to writing the content of the project plan. Most of the time went to this, but t
 were development in the prototypes and method ideas that we brought up from past
 weeks.
 
-In general, most sections of the report was rewritten by members that were not
-originally assigned to the section, in order to increase consistency.
+In general, most sections of the report were rewritten by members that were not
+originally assigned to those sections, in order to increase consistency.
 Everyone in the group made an effort to make sure that each of the chapters were
 well-written and together made up one coherent text.
 
 ** Decisions
 #+begin_decisions
-- We decided to not pursue the Wave Function Collapse type of procedural
-  generation for roads.
+- We decided to not pursue the Wave Function Collapse type of procedural generation for roads.
+- We decided to not pursue the Search-based AI and ML.
+- These two decisions might be changed later if the agent-based approach will not work out well.
 #+end_decisions
 
 ** Meeting, writing and assignments
@@ -842,7 +922,7 @@ so we tried a few different tools. Grammarly turned out to be the most useful
 one because it helped us phrase our sentences more consistently and more
 "scientific", basically giving our report more credibility.
 
-Another tool we investigated is textidote, which is a tool for LaTeX for
+Another tool we investigated was textidote, which is a tool for LaTeX for
 spelling, grammar and general LaTeX syntax checking. We mostly used this for the
 syntax, since grammarly did a much better job at spelling and grammar.
 
@@ -874,14 +954,14 @@ very experienced in the machine learning field and thus we decided to skip this.
 ** Decisions
 #+begin_decisions
 - The Agent-based method for road generation is the one we are going to use.
-- A summary of the current week progress should be written during every Friday's
-  workshop at 16:00.
-- Alexander is responsible for the communication between the other project
+- A summary of the current week's progress should be written together during
+  every Friday workshop at 16:00.
+- Alexander is responsible for the communication with the other project
   group that has the same project as our group.
 - Anton is responsible for the communication between our group and the
   supervisor which means he is responsible for sending and responding to mail
   with the supervisor.
-- We decided we do not need any strict rules for taking breaks during workshops,
+- We decided that we did not need any strict rules for taking breaks during workshops,
   in regards to if that pause should be logged (acceptable within reasonable
   durations).
 - Unity and C# will be used for the project
@@ -897,30 +977,34 @@ Everything that the project needs (and more) is offered within Unity, as well as
 very powerful debugging and profiling tools. Lots of features that we want to
 implement can easily be done with Unity compared to other tools available.
 
-Some alternatives that were researched up to this week is C++ Raylib, Java
-LWGJL, Java jMonkeyEngine, but these were ruled out mostly because it lacked
+Some alternatives that were researched up to this week was C++ Raylib, Java
+LWGJL, and Java jMonkeyEngine, but these were ruled out mostly because they lacked
 most of the tools that we would need which Unity already had.
 Choosing one of those alternatives would mean we would have to reimplement a lot
 of basic functionality that would only postpone actual development of the
 project.
 
+Jacob wrote and held a presentation of Unity and some potential techniques that
+could be used for certain generation parts. This helped the group get started
+with some Unity concepts.
+
 ** Report, Project plan and Terminology
 For the most part, this week was spent writing the project plan and the first
-draft was quickly completed in order to get feedback from the supervisor.
+draft was quickly completed in order to get feedback from our supervisor.
 
 Something that we quickly realized would be important for writing the project
 plan and report was terminology.
-Even within our group, we realized there were inconsistency in the meaning of
+Even within our group, we realized that there were inconsistency in the meaning of
 words and that meant that we had to define these very strictly in the report in
-order to avoid confusion for the reader. We spent a while defining these and
-they can be found in the project plan / report.
+order to avoid confusion for the reader and ourselves. We spent a while carefully
+defining these and they can be found in the glossary of the project plan.
 
 ** Development
 The first method of road generation turned out to be best suited for our
 project, but the second method will be considered for plot generation in the
 future.
 A lot of progress was made on making the road generation as flexible as
-possible, as well as tuning the results for better results.
+possible, as well as tuning the results.
 
 The road generator now lets each agent to have its own strategy for generation
 which they will follow. One example of a road strategy that is used is the Paris
@@ -940,9 +1024,9 @@ place roads that mimic the structure of these cities.
 #+end_column
 #+end_columns
 
-For the world generator, we defined a pipeline that the program will follow
+For the world generator, we defined an architecture that the program will follow
 which basically means that we have created a design for the algorithm as a
-whole.
+whole. This architecture treats each subgenerator as an isolated function.
 
 ** Overall
 It was useful to get a lot of work done this early and we quickly got a
@@ -953,6 +1037,8 @@ the algorithm.
 * Week 2
 This week also had a few lectures, and Alexander also came back from his
 vacation so we made sure to get him up to date.
+We further discussed and scoped the goal of the project, and Jacob made
+a simple mock of the application which will be used as a rough guideline.
 
 ** Decisions
 #+begin_decisions
@@ -967,10 +1053,10 @@ vacation so we made sure to get him up to date.
 
 ** Discussion and planning
 Lots of subjects were brought up during the workshops this week, such as what
-method we wanted to use for different parts in the world generator.
+methods we wanted to use for different parts of the world generation.
 We quickly came up with two methods of generating roads, and because we could
 not all agree on one method we decided it was best to create two separate demos
-that would demonstrate the method and its pros / cons.
+that would demonstrate the pros and cons of each approach.
 
 The first demo would make use of road building Agents that would be deployed
 onto a 2D-plane, and they would place down roads while interacting with the road
@@ -984,17 +1070,17 @@ point, and then recursively applying that algorithm into more detail.
 
 We decided to postpone selecting which tools to use for our project until next
 week, because we wanted to research which tool would suit us best and needed
-more ticouldme.
+more time.
 
 * Week 1
 This week marks the start of the project, and thus a lot of research and
 administrative tasks had to be done, such as decisions regarding tools and
-a schedule.
+schedule.
 
-Every decision that we make during meetings should be documented, so we decided
-to create a group contract and a log book. Initially, the log book were only the
+Every decision that we will make during meetings should be documented, so we decided
+to create a group contract and a log book. Initially, the log book was only each
 individual's own weekly logs, but we later realized we needed a shared log that
-summarized the overall progress of the project, which is the log that you are
+summarized the overall progress of the project, which lead to the log that you are
 reading right now.
 
 ** Decisions
@@ -1002,30 +1088,33 @@ reading right now.
 - The secretary during the meetings should be rotated according to this order:
   1. Marcus Ansamaa
   2. Alexander Arvidsson
-  3. Anton Håkansson
-  4. Viktor Truvé
+  3. Jacob Eriksson
+  4. Anton Håkansson
+  5. Viktor Truvé
 - The report should be written in LaTeX and it should be written in Swedish
-  (this decision was later changed to english in a future decision).
+  (this decision was later changed to English in a future decision the same week).
 - Theodor is responsible for booking group rooms for meetings.
+- Schedule of admin meetings and opt-out workshops
+- Majority voting for decisions concerning the whole group.
 #+end_decisions
 
 We decided to use Google Calendar for scheduled meetings, and that we should
-have two lunch meetings as well as 3 workshops every week. The lunch meetings
-usually were an hour long, over lunch, while the workshops were all 4 hours,
+have two lunch meetings as well as 3 opt-out workshops every week. The lunch meetings
+were usually an hour long, over lunch, while all the workshops were 4 hours long,
 placed during Thursday afternoon, Friday morning and Friday afternoon.
 The purpose of the workshops is to meet up with the group to sit down and get
-work done, while also being able to get help from eachother if need be.
+work done, while also being able to get help from each other.
 
-For communication, we decided to use Slack as it is the easier
-platform which everyone was familiar with, which also gave us a more organized
-form of communication than other platforms would offer (for example, Messenger).
+For communication, we decided to use Slack as everyone was familiar with it,
+which also gave us a more organized form of communication than other platforms
+would offer (for example, Messenger).
 
-File sharing and development ended up being Google Drive and Github. All our
-documents and resources we collect during the projects lifetime would be placed
-in drive for ease of access, while the project code and report is in two
+File sharing and development ended up being Google Drive and Github respectively.
+All our documents and resources we collect during the projects lifetime would be placed
+in Drive for ease of access, while the project code and report will be stored in two
 separate Github repositories for version control.
 
-** Meetings and research.
+** Meetings and Research
 We got to meet our supervisor, Staffan, during this week which guided us to get a good
 start with the project, and we were also able to ask any questions we had before
 getting started.
