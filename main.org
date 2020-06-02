@@ -26,6 +26,11 @@ Usually, the group will write their own individual efforts at the end of the
 week and everything will be then compose into one shared log which will be
 written here.
 
+A link to the project source code can be found online at
+https://github.com/DATX02-20-02/CityCraft, and a link to the full project report
+which this project log references can also be found online at
+https://github.com/DATX02-20-02/Report.
+
 * Week 16
 #+ATTR_HTML: :class notice-warning
 #+begin_notice
