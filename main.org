@@ -68,17 +68,6 @@ Fixed stone/tree/bush not appearing in parks
 This section is a work in progress
 #+end_notice
 
-
-#+BEGIN_COMMENT
-Massive performance boost once we found out and fixed textures that were imported at extremely high resolutions.
-Since full resolution will be used when we export we chose to reduce the resolutions significantly for the
-real-time generation and rendering.
-
-Progress on Methods chapters.
-A better approx rectangle for polygons with 4 vertices.
-Road user input
-#+END_COMMENT
-
 ** Decisions
 #+begin_decisions
 - This iteration lasts until the day before the final report should be turned
@@ -101,11 +90,68 @@ Road user input
 - Excess time goes to writing discussions chapter
 #+end_decisions
 
-#+BEGIN_COMMENT
-Background chapter finished
-Terrain size can now be changed from the GUI
-Restructure of Methods chapter due to feedback from fackspråk and the first pages of this chapter are almost done.
-#+END_COMMENT
+
+** Development
+*** Development
+Alexander worked on improving the function for approximating rectangles within
+polygons.
+Since rectangles have 4 edges, it would mean that it should be much easier to
+approximate rectangles within polygons with 4 edges as well.
+Thus, Alexander spent a lot of time investigating in better approximation
+methods for these cases, and developed a method that gave much better results
+than the general method used previously.
+This method is only used if the rectangle have exactly 4 edges.
+
+Marcus spent time on the GUI for the terrain generator, and it is now possible
+to change the size of the terrain from the GUI.
+There were a few bugs with the camera movement which Marcus also sorted out this
+week.
+
+Theodor has managed to get his L-System based building generator working with
+the application and the terrain.
+The buildings now create basements that align with the terrain as well, after
+some trial and error with transformations.
+He also noticed the overhead his generator caused because of creating a huge
+amount of GameObjects.
+Each segment of the building had its own GameObject, which Unity has to handle
+independently.
+By merging each segment of a building into one GameObject, we can let Unity
+handle the rendering much more efficiently.
+In other terms, less GameObjects, less calls to the graphics card, more
+performance.
+
+*** Optimization
+Jacob noticed that all our textures in our application was imported at an
+extremely high resolution.
+By reducing the resolution that the textures are imported as in the game, we
+achieved a significant boost in performance.
+Because the export function handles meshes and textures independently from the
+game rendering, the textures are still exported in full resolution, causing no
+downsides for the final end goal of exporting the mesh.
+
+This problem was not something we anticipated would cause a huge boost in
+performance. However, this was because the L-System based building generator had
+not been implemented into the application yet, and buildings are very heavy on
+textures.
+So, it makes sense that performance would be a huge problem if this optimization
+was not found.
+
+
+*** Writing
+The due date for the report was closing in, so writing the report was part of
+the focus this week.
+The background chapter was finally mostly finished this week.
+The meeting with fackspråk resulted in lots of feedback for our existing
+chapters and text, some conflicting with specifications and supervisor
+recommendations, and some very useful.
+The conflicting feedback were mostly because of personal preference, and we
+eventually found a format and solution that we, as well as our supervisor, were
+satisfied with.
+
+Lots of progress were made on the Methods and Results chapters among all group members, each
+member describing their own section as described in the decisions above.
+
+
 
 * Week 12
 #+ATTR_HTML: :class notice-warning
