@@ -197,8 +197,7 @@ others focused on methods and results.
 This section is a work in progress
 #+end_notice
 
-** Development
-*** Optimization
+** Optimization
 Jacob noticed that all our textures in our application was imported at an
 extremely high resolution.
 By reducing the resolution that the textures are imported as in the game, we
