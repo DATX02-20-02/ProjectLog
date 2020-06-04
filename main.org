@@ -43,13 +43,21 @@ This section is a work in progress
 
 #+END_COMMENT
 
-During the final week, some minor adjustments on the report were made.
-This included rendering a new cover image for the report with updated materials that render correctly in Blender.
-Previously, the roofs of buildings were displayed incorrectly and the ocean appeared gray.
-This was solved by changing the shader for these into the *Standard Unity Shader* that follows the *.glTF* specification.
+During the final week, some minor adjustments on the report and CityCraft application were made.
+The changes were based on the comments from the opposition group last week and the feedback from our examiner.
 
-Furthermore, Jacob made some minor improvements to the bibliography of the report according to the feedback the group received from the examiner.
-The references now show the actual journals and issues rather than just a DOI.
+** Writing
+  Furthermore, Jacob made some minor improvements to the bibliography of the report according to the feedback the group received from the examiner.
+  The references now show the actual journals and issues rather than just a DOI.
+  The previous cover image for the report was also replaced with an updated version.
+  Anton rendered a new cover image for the report with updated materials that render correctly in Blender.
+   
+** Development
+  Previously, the roofs of buildings were displayed incorrectly and the ocean appeared gray.
+  This was solved by changing the shader for these into the *Standard Unity Shader* that follows the *.glTF* specification.
+  
+  Jacob also made an official release version of CityCraft and the report, available [[https://github.com/DATX02-20-02/CityCraft/releases][here]].
+   
 
 * Week 19
 # 2020-05-25 - 2020-05-31
@@ -62,6 +70,10 @@ This section is a work in progress
 Final presentation
 Resolved comments from other group opposition
 #+END_COMMENT
+
+The week of the final presentation the whole group presented, planned, and rehearsed the final presentation.
+Furthermore, the opposition group, consisting of Viktor Truvé and Anton Håkansson, prepared questions and comments for the opposing group.
+Every group member also wrote, and submitted their individual evaluation.
 
 * Week 18
 # 2020-05-18 - 2020-05-24
