@@ -48,6 +48,11 @@ This included rendering a new cover image for the report with updated materials 
 Previously, the roofs of buildings were displayed incorrectly and the ocean appeared gray.
 This was solved by changing the shader for these into the *Standard Unity Shader* that follows the *.glTF* specification.
 
+#+begin_w-responsive
+#+CAPTION: Final city exported and rendered in Blender, with shader fixes.
+[[./images/week20/cover.png]]
+#+end_w-responsive
+
 Furthermore, Jacob made some minor improvements to the bibliography of the report according to the feedback the group received from the examiner.
 The references now show the actual journals and issues rather than just a DOI.
 
@@ -163,6 +168,11 @@ Basically, it extracts a portion of the terrain and applies an asphalt texture,
 and slightly raising it to avoid z-fighting (a common problem where triangles in
 computer graphics where triangles are overlapping).
 More details is found in the parking generator in the report.
+
+#+begin_w-responsive
+#+CAPTION: Terrain mesh projector for the asphalt in parking generator
+[[./images/week16/terrain_projector.png]]
+#+end_w-responsive
 
 ** Writing
 We had our third and final fackspråk with the Chalmers Library which gave us
