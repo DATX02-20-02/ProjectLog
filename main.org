@@ -288,7 +288,6 @@ This section is a work in progress
 
 
 ** Development
-*** Development
 Alexander worked on improving the function for approximating rectangles within
 polygons.
 Since rectangles have 4 edges, it would mean that it should be much easier to
@@ -316,7 +315,7 @@ performance.
 [[./images/week13/building-every-other.PNG]]
 #+end_w-responsive
 
-*** Writing
+** Writing
 The due date for the report was closing in, so writing the report was part of
 the focus this week.
 The background chapter was finally mostly finished this week.
@@ -329,8 +328,6 @@ satisfied with.
 
 Lots of progress were made on the Methods and Results chapters among all group members, each
 member describing their own section as described in the decisions above.
-
-
 
 * Week 12
 #+ATTR_HTML: :class notice-warning
