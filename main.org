@@ -82,10 +82,12 @@ Every group member also wrote, and submitted their individual evaluation.
 This section is a work in progress
 #+end_notice
 
-Since the exhibition was cancelled, and replaced with a video demonstrating our
-project, we gave this task to Theodor.
-He did a good job in demonstrating the functionality of our application, and we
-all gave feedback to him.
+The exhibition was cancelled and replaced with a video demonstrating our
+project.
+We decided to assign the task of creating this video to Theodor, and he did a
+good job in demonstrating the functionality of our application.
+We all spent time looking at his video and giving him feedback before he turned
+it in.
 
 ** Final presentation
 It was soon time for a part of the group to do the final presentation.
