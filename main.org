@@ -31,7 +31,31 @@ https://github.com/DATX02-20-02/CityCraft, and a link to the full project report
 which this project log references can also be found online at
 https://github.com/DATX02-20-02/Report.
 
-* Week 16
+
+* Week 19
+# 2020-05-25 - 2020-05-31
+#+ATTR_HTML: :class notice-warning
+#+begin_notice
+This section is a work in progress
+#+end_notice
+
+#+BEGIN_COMMENT
+
+#+END_COMMENT
+
+* Week 18
+# 2020-05-18 - 2020-05-24
+#+ATTR_HTML: :class notice-warning
+#+begin_notice
+This section is a work in progress
+#+end_notice
+
+#+BEGIN_COMMENT
+
+#+END_COMMENT
+
+* Week 17
+# 2020-05-11 - 2020-05-17
 #+ATTR_HTML: :class notice-warning
 #+begin_notice
 This section is a work in progress
@@ -41,7 +65,8 @@ This section is a work in progress
 Final report done. (yay!)
 #+END_COMMENT
 
-* Week 15
+* Week 16
+# 2020-05-04 - 2020-05-10
 #+ATTR_HTML: :class notice-warning
 #+begin_notice
 This section is a work in progress
@@ -55,7 +80,18 @@ had some problems and we had made some of our own as well.
 Buildings finalized and optimized with LOD and mesh merges.
 #+END_COMMENT
 
+* Week 15
+# 2020-04-27 - 2020-05-03
+#+ATTR_HTML: :class notice-warning
+#+begin_notice
+This section is a work in progress
+#+end_notice
+
+#+BEGIN_COMMENT
+#+END_COMMENT
+
 * Week 14
+# 2020-04-20 - 2020-04-26
 #+ATTR_HTML: :class notice-warning
 #+begin_notice
 This section is a work in progress
@@ -66,6 +102,33 @@ Lots of report writing
 Terrain color gradient adjusted to now correctly contain snowy mountains
 Fixed stone/tree/bush not appearing in parks
 #+END_COMMENT
+
+
+** Development
+*** Optimization
+Jacob noticed that all our textures in our application was imported at an
+extremely high resolution.
+By reducing the resolution that the textures are imported as in the game, we
+achieved a significant boost in performance.
+Because the export function handles meshes and textures independently from the
+game rendering, the textures are still exported in full resolution, causing no
+downsides for the final end goal of exporting the mesh.
+
+This problem was not something we anticipated would cause a huge boost in
+performance. However, this was because the L-System based building generator had
+not been implemented into the application yet, and buildings are very heavy on
+textures.
+So, it makes sense that performance would be a huge problem if this optimization
+was not found.
+
+Marcus spent time on the GUI for the terrain generator, and it is now possible
+to change the size of the terrain from the GUI.
+There were a few bugs with the camera movement which Marcus also sorted out this
+week.
+
+** Writing
+Much like last week, this week involved a lot of writing to document the
+different parts of the application
 
 * Week 13
 #+ATTR_HTML: :class notice-warning
@@ -107,11 +170,6 @@ methods for these cases, and developed a method that gave much better results
 than the general method used previously.
 This method is only used if the rectangle have exactly 4 edges.
 
-Marcus spent time on the GUI for the terrain generator, and it is now possible
-to change the size of the terrain from the GUI.
-There were a few bugs with the camera movement which Marcus also sorted out this
-week.
-
 Theodor has managed to get his L-System based building generator working with
 the application and the terrain.
 The buildings now create basements that align with the terrain as well, after
@@ -124,23 +182,6 @@ By merging each segment of a building into one GameObject, we can let Unity
 handle the rendering much more efficiently.
 In other terms, less GameObjects, less calls to the graphics card, more
 performance.
-
-*** Optimization
-Jacob noticed that all our textures in our application was imported at an
-extremely high resolution.
-By reducing the resolution that the textures are imported as in the game, we
-achieved a significant boost in performance.
-Because the export function handles meshes and textures independently from the
-game rendering, the textures are still exported in full resolution, causing no
-downsides for the final end goal of exporting the mesh.
-
-This problem was not something we anticipated would cause a huge boost in
-performance. However, this was because the L-System based building generator had
-not been implemented into the application yet, and buildings are very heavy on
-textures.
-So, it makes sense that performance would be a huge problem if this optimization
-was not found.
-
 
 *** Writing
 The due date for the report was closing in, so writing the report was part of
