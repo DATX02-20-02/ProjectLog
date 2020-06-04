@@ -64,10 +64,24 @@ Opposition for other group
 This section is a work in progress
 #+end_notice
 
-#+BEGIN_COMMENT
-Final report done. (yay!)
-rebasing branches to get changes into master
-#+END_COMMENT
+** Development
+It was time to get all the different branches into our master branch, so a lot
+of the code needed to be rebased and merged.
+It took much longer than expected, because some branches were quite old, such as
+the new parking generator and road mesh branch.
+
+** Writing
+The deadline for the final report was this week, so the group spent lots of time
+to finish it and managed to get it to a state where we were happy with.
+The report was turned in and we were awaiting the opposition from the other group.
+
+We received the report from the other group and everyone went through it and
+left feedback which would later be turned in and sent to the other group.
+There were some confusion in regards with how the other group should receive the
+opposition, as well as when we would receive it.
+We found out that it was our responsibilty to send it to the other group, which
+we did, albeit after the deadline has passed (again, due to lots of confusion
+and missing information from the examinators).
 
 * Week 16
 # 2020-05-04 - 2020-05-10
