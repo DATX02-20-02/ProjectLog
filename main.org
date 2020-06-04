@@ -82,11 +82,34 @@ Every group member also wrote, and submitted their individual evaluation.
 This section is a work in progress
 #+end_notice
 
-#+BEGIN_COMMENT
-Theo worked on creating the exhibition video
-Practice and preparation for final presentation
-Opposition for other group
-#+END_COMMENT
+Since the exhibition was cancelled, and replaced with a video demonstrating our
+project, we gave this task to Theodor.
+He did a good job in demonstrating the functionality of our application, and we
+all gave feedback to him.
+
+** Final presentation
+It was soon time for a part of the group to do the final presentation.
+Alexander, Theodor, Marcus, Jacob were the ones to do the presentation, and we
+decided to use Google Sheets for it.
+Adding content and manuscripts for the presentation was the primary focus of
+this week, as well as helping eachother by giving feedback.
+By practicing the presentation quite a few times, we could ensure that the
+presentation would go smoothly without any hiccups, which it did.
+Our supervisor and examinator were happy with our presentation, which was good
+to hear.
+
+Finally, after we had done our presentation, it was time for the other group to
+go through their opposition.
+Unfortunately, the questions and feedback they gave were not very useful and
+they focused on unnecessary things.
+However, we did get some constructive feedback which were just simple fixes in
+our report.
+
+Afterwards, Viktor and Anton would give their opposition comments to the group
+that were assigned to them, which we all thought in the group were useful and
+constructive comments.
+We all made sure that the most importants comments were put forward for the
+group, which hopefully they went through afterwards and resolved.
 
 * Week 17
 # 2020-05-11 - 2020-05-17
@@ -170,8 +193,8 @@ This section is a work in progress
 
 ** Development
 The terrain color was adjusted by Jacob to correctly contain snowy mountains.
-There were also some fixes to the park generator which caused no trees, stones
-or bushes to be generator.
+We also found some issues in the park generator which caused no trees, stones
+or bushes to generated, which Jacob managed to fix.
 
 ** Writing
 Lots of focus was placed on writing the results chapter and other sections, such
@@ -186,8 +209,7 @@ others focused on methods and results.
 This section is a work in progress
 #+end_notice
 
-** Development
-*** Optimization
+** Optimization
 Jacob noticed that all our textures in our application was imported at an
 extremely high resolution.
 By reducing the resolution that the textures are imported as in the game, we
