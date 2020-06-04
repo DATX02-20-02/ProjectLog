@@ -257,12 +257,15 @@ Because the export function handles meshes and textures independently from the
 game rendering, the textures are still exported in full resolution, causing no
 downsides for the final end goal of exporting the mesh.
 
-This problem was not something we anticipated would cause a huge boost in
-performance. However, this was because the L-System based building generator had
-not been implemented into the application yet, and buildings are very heavy on
-textures.
+This problem was not something we anticipated would cause such a huge bottleneck
+in performance.
+However, because the L-System based building generator had not been implemented
+into the application yet, the performance loss would not be noticed until that
+was merged into master.
+Fixing this caused the application to run much smoother, since buildings were
+previously relying on lots of textures.
 So, it makes sense that performance would be a huge problem if this optimization
-was not found.
+was not implemented.
 
 ** Writing
 Much like last week, this week involved a lot of writing to document the
