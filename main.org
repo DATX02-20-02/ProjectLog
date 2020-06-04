@@ -40,18 +40,18 @@ This section is a work in progress
 #+end_notice
 
 During the final week, some minor adjustments on the report and CityCraft application were made.
-The changes were based on the comments from the opposition group last week and the feedback from our examiner.
+The changes were based on the comments received from the opposition group during the final presentation and the feedback from our examiner.
 
 ** Writing
-  Furthermore, Jacob made some minor improvements to the bibliography of the report according to the feedback the group received from the examiner.
+  Jacob made some minor improvements to the bibliography of the report according to the feedback the group received from the examiner.
   The references now show the actual journals and issues rather than just a DOI.
   The previous cover image for the report was also replaced with an updated version.
   Anton rendered a new cover image for the report with updated materials that render correctly in Blender.
    
 ** Development
-  Previously, the roofs of buildings were displayed incorrectly and the ocean appeared gray.
-  This was solved by changing the shader for these into the *Standard Unity Shader* that follows the *.glTF* specification.
-
+  Previously, the rooftops of buildings were displayed incorrectly and the ocean appeared gray when rendered in Blender.
+  This was solved by changing the shader for the ocean and the rooftop buildings into the *Standard Unity Shader* that follows the *.glTF* specification, and hence, are displayed correctly in Blender.
+   
   #+begin_w-responsive
   #+CAPTION: Final city exported and rendered in Blender, with shader fixes.
   [[./images/week20/cover.png]]
@@ -72,8 +72,13 @@ Resolved comments from other group opposition
 #+END_COMMENT
 
 The week of the final presentation the whole group presented, planned, and rehearsed the final presentation.
-Furthermore, the opposition group, consisting of Viktor Truvé and Anton Håkansson, prepared questions and comments for the opposing group.
-Every group member also wrote, and submitted their individual evaluation.
+The group received a lot of appraising comments from our supervisor as well as the opposing group on the presentation.
+This was at least some confirmation that the presentation was well presented which the project group felt as well. 
+
+Furthermore, the opposition group, consisting of Viktor and Anton, prepared questions and comments for the opposing group.
+Viktor and Anton also presented these to the opposing group and many of the comments were well received and brought about a good dialog.
+
+Every group member also wrote and submitted their evaluation of all group members.
 
 * Week 18
 # 2020-05-18 - 2020-05-24
