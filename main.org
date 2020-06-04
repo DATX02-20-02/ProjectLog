@@ -53,6 +53,11 @@ The changes were based on the comments received from the opposition group during
   This was solved by changing the shader for the ocean and the rooftop buildings into the *Standard Unity Shader* that follows the *.glTF* specification, and hence, are displayed correctly in Blender.
    
   #+begin_w-responsive
+  #+CAPTION: How the rooftops previously were incorrectly displayed in Blender.
+  [[./images/week20/rooftop.png]]
+  #+end_w-responsive
+  
+  #+begin_w-responsive
   #+CAPTION: Final city exported and rendered in Blender, with shader fixes.
   [[./images/week20/cover.png]]
   #+end_w-responsive
