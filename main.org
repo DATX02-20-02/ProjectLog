@@ -311,6 +311,11 @@ handle the rendering much more efficiently.
 In other terms, less GameObjects, less calls to the graphics card, more
 performance.
 
+#+begin_w-responsive
+#+CAPTION: L-System based building generator with basement
+[[./images/week13/building-every-other.PNG]]
+#+end_w-responsive
+
 *** Writing
 The due date for the report was closing in, so writing the report was part of
 the focus this week.
