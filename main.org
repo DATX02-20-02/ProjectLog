@@ -40,7 +40,8 @@ This section is a work in progress
 #+end_notice
 
 #+BEGIN_COMMENT
-
+Final presentation
+Resolved comments from other group opposition
 #+END_COMMENT
 
 * Week 18
@@ -51,7 +52,9 @@ This section is a work in progress
 #+end_notice
 
 #+BEGIN_COMMENT
-
+Theo worked on creating the exhibition video
+Practice and preparation for final presentation
+Opposition for other group
 #+END_COMMENT
 
 * Week 17
@@ -63,6 +66,7 @@ This section is a work in progress
 
 #+BEGIN_COMMENT
 Final report done. (yay!)
+rebasing branches to get changes into master
 #+END_COMMENT
 
 * Week 16
@@ -72,13 +76,45 @@ Final report done. (yay!)
 This section is a work in progress
 #+end_notice
 
-#+BEGIN_COMMENT
-Road LOD done
-Spiny skyscrapers fixed
-Broken plot division from week 10 fixed. The library we had chosen
-had some problems and we had made some of our own as well.
-Buildings finalized and optimized with LOD and mesh merges.
-#+END_COMMENT
+We had our first teambuilding during this week, but not all members could join.
+Alexander, Theodor, Anton and Viktor met up at JA Pripps to eat some burgers and
+drink some beer.
+
+Other than that, there were a lot of development for final changes and fixes
+that we wanted to finish before the final report.
+
+** Development
+Level of detail for roads and intersections were finished this week, which
+resulted in a nice performance boost.
+
+Jacob spent some time fixing various aesthetical bugs, such as skyscrapers being
+very thin and the broken plot division from week 10.
+The library that was chosen to perform plot division had some problems, and we
+had to implement some algorithms ourselves.
+More details how these algorithms work can be found in the Methods chapter in
+the report, specifically under the plot generator section.
+
+Buildings also received some level of detail attention, since the buildings make
+up a big part of the city, it made much sense to optimize it as well.
+
+Alexander decided to improve the parking generator by using textured quads
+instead of creating white lines individually.
+This was mostly to reduce the amount of game objects in the application.
+There were also a lot of discussion within the group and the supervisor that the
+parking generator did not have a very good generation of asphalt below it.
+So, Alexander researched and developed a terrain mesh projector class.
+Basically, it extracts a portion of the terrain and applies an asphalt texture,
+and slightly raising it to avoid z-fighting (a common problem where triangles in
+computer graphics where triangles are overlapping).
+More details is found in the parking generator in the report.
+
+** Writing
+We had our third and final fackspråk with the Chalmers Library which gave us
+some feedback and recommendations in regards to our writing.
+So, the group went through this to improve the content of our report.
+
+Continuing like the last couple of weeks with the writing to finalize it, so
+that it would be ready for the hand in deadline which was approaching.
 
 * Week 15
 # 2020-04-27 - 2020-05-03
@@ -87,8 +123,16 @@ Buildings finalized and optimized with LOD and mesh merges.
 This section is a work in progress
 #+end_notice
 
-#+BEGIN_COMMENT
-#+END_COMMENT
+** Development
+The terrain color was adjusted by Jacob to correctly contain snowy mountains.
+There were also some fixes to the park generator which caused no trees, stones
+or bushes to be generator.
+
+** Writing
+Lots of focus was placed on writing the results chapter and other sections, such
+as the discussion.
+Anton and Viktor were primarily focusing on the discussion chapter, while the
+others focused on methods and results.
 
 * Week 14
 # 2020-04-20 - 2020-04-26
@@ -96,13 +140,6 @@ This section is a work in progress
 #+begin_notice
 This section is a work in progress
 #+end_notice
-
-#+BEGIN_COMMENT
-Lots of report writing
-Terrain color gradient adjusted to now correctly contain snowy mountains
-Fixed stone/tree/bush not appearing in parks
-#+END_COMMENT
-
 
 ** Development
 *** Optimization
