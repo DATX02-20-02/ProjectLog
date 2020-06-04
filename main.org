@@ -32,6 +32,25 @@ which this project log references can also be found online at
 https://github.com/DATX02-20-02/Report.
 
 
+* Week 20
+# 2020-06-1 - 2020-06-5
+#+ATTR_HTML: :class notice-warning
+#+begin_notice
+This section is a work in progress
+#+end_notice
+
+#+BEGIN_COMMENT
+
+#+END_COMMENT
+
+During the final week, some minor adjustments on the report were made.
+This included rendering a new cover image for the report with updated materials that render correctly in Blender.
+Previously, the roofs of buildings were displayed incorrectly and the ocean appeared gray.
+This was solved by changing the shader for these into the *Standard Unity Shader* that follows the *.glTF* specification.
+
+Furthermore, Jacob made some minor improvements to the bibliography of the report according to the feedback the group received from the examiner.
+The references now show the actual journals and issues rather than just a DOI.
+
 * Week 19
 # 2020-05-25 - 2020-05-31
 #+ATTR_HTML: :class notice-warning
