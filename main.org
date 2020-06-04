@@ -39,10 +39,6 @@ https://github.com/DATX02-20-02/Report.
 This section is a work in progress
 #+end_notice
 
-#+BEGIN_COMMENT
-
-#+END_COMMENT
-
 During the final week, some minor adjustments on the report and CityCraft application were made.
 The changes were based on the comments received from the opposition group during the final presentation and the feedback from our examiner.
 
@@ -55,9 +51,13 @@ The changes were based on the comments received from the opposition group during
 ** Development
   Previously, the rooftops of buildings were displayed incorrectly and the ocean appeared gray when rendered in Blender.
   This was solved by changing the shader for the ocean and the rooftop buildings into the *Standard Unity Shader* that follows the *.glTF* specification, and hence, are displayed correctly in Blender.
-  
-  Jacob also made an official release version of CityCraft available [[https://github.com/DATX02-20-02/CityCraft/releases][here]].
    
+  #+begin_w-responsive
+  #+CAPTION: Final city exported and rendered in Blender, with shader fixes.
+  [[./images/week20/cover.png]]
+  #+end_w-responsive
+  
+  Jacob also made an official release version of CityCraft and the report, available [[https://github.com/DATX02-20-02/CityCraft/releases][here]].
 
 * Week 19
 # 2020-05-25 - 2020-05-31
@@ -87,10 +87,12 @@ Every group member also wrote and submitted their evaluation of all group member
 This section is a work in progress
 #+end_notice
 
-Since the exhibition was cancelled, and replaced with a video demonstrating our
-project, we gave this task to Theodor.
-He did a good job in demonstrating the functionality of our application, and we
-all gave feedback to him.
+The exhibition was cancelled and replaced with a video demonstrating our
+project.
+We decided to assign the task of creating this video to Theodor, and he did a
+good job in demonstrating the functionality of our application.
+We all spent time looking at his video and giving him feedback before he turned
+it in.
 
 ** Final presentation
 It was soon time for a part of the group to do the final presentation.
@@ -181,6 +183,11 @@ and slightly raising it to avoid z-fighting (a common problem where triangles in
 computer graphics where triangles are overlapping).
 More details is found in the parking generator in the report.
 
+#+begin_w-responsive
+#+CAPTION: Terrain mesh projector for the asphalt in parking generator
+[[./images/week16/terrain_projector.png]]
+#+end_w-responsive
+
 ** Writing
 We had our third and final fackspråk with the Chalmers Library which gave us
 some feedback and recommendations in regards to our writing.
@@ -214,6 +221,28 @@ others focused on methods and results.
 This section is a work in progress
 #+end_notice
 
+** Development
+Marcus spent time on the GUI for the terrain generator, and it is now possible
+to change the size of the terrain from the GUI.
+There were a few bugs with the camera movement which Marcus also sorted out this
+week.
+
+Alexander moved his logic for the road user input to its own class called
+RoadUIHandler.
+This class is completely independent from the generators and the application,
+and easily hooks into the GUI of the application without any problems.
+This was useful because it demonstrated an approach of creating UI independent
+handlers for different inputs.
+However, the only thing that required world level input is the city placement,
+so there were no other UI handlers needed.
+For future work, it could be useful for others to look at this class to
+implement inputs for their own specialized generators, if needed.
+
+#+begin_w-responsive
+#+CAPTION: City markers implemented with the RoadUIHandler class
+[[./images/week14/citymarkers.png]]
+#+end_w-responsive
+
 ** Optimization
 Jacob noticed that all our textures in our application was imported at an
 extremely high resolution.
@@ -229,11 +258,6 @@ not been implemented into the application yet, and buildings are very heavy on
 textures.
 So, it makes sense that performance would be a huge problem if this optimization
 was not found.
-
-Marcus spent time on the GUI for the terrain generator, and it is now possible
-to change the size of the terrain from the GUI.
-There were a few bugs with the camera movement which Marcus also sorted out this
-week.
 
 ** Writing
 Much like last week, this week involved a lot of writing to document the
@@ -269,7 +293,6 @@ This section is a work in progress
 
 
 ** Development
-*** Development
 Alexander worked on improving the function for approximating rectangles within
 polygons.
 Since rectangles have 4 edges, it would mean that it should be much easier to
@@ -292,7 +315,12 @@ handle the rendering much more efficiently.
 In other terms, less GameObjects, less calls to the graphics card, more
 performance.
 
-*** Writing
+#+begin_w-responsive
+#+CAPTION: L-System based building generator with basement
+[[./images/week13/building-every-other.PNG]]
+#+end_w-responsive
+
+** Writing
 The due date for the report was closing in, so writing the report was part of
 the focus this week.
 The background chapter was finally mostly finished this week.
@@ -305,8 +333,6 @@ satisfied with.
 
 Lots of progress were made on the Methods and Results chapters among all group members, each
 member describing their own section as described in the decisions above.
-
-
 
 * Week 12
 #+ATTR_HTML: :class notice-warning
