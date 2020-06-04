@@ -181,8 +181,8 @@ This section is a work in progress
 
 ** Development
 The terrain color was adjusted by Jacob to correctly contain snowy mountains.
-There were also some fixes to the park generator which caused no trees, stones
-or bushes to be generator.
+We also found some issues in the park generator which caused no trees, stones
+or bushes to generated, which Jacob managed to fix.
 
 ** Writing
 Lots of focus was placed on writing the results chapter and other sections, such
