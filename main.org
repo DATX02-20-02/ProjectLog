@@ -53,8 +53,8 @@ The changes were based on the comments received from the opposition group during
   Anton rendered a new cover image for the report with updated materials that render correctly in Blender.
    
 ** Development
-  Previously, the roofs of buildings were displayed incorrectly and the ocean appeared gray.
-  This was solved by changing the shader for these into the *Standard Unity Shader* that follows the *.glTF* specification.
+  Previously, the rooftops of buildings were displayed incorrectly and the ocean appeared gray when rendered in Blender.
+  This was solved by changing the shader for the ocean and the rooftop buildings into the *Standard Unity Shader* that follows the *.glTF* specification, and hence, are displayed correctly in Blender.
   
   Jacob also made an official release version of CityCraft available [[https://github.com/DATX02-20-02/CityCraft/releases][here]].
    
