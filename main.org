@@ -18,13 +18,12 @@
 #+BIBLIOGRAPHY: references. plain
 
 * Introduction
-This page will consist of the collaborative log from each group member and
+This page consists of the collaborative log from each group member and
 eventual problems and challenges that the group encounters during the
-development process of the project.
+development process of this bachelor project.
 
-Usually, the group will write their own individual efforts at the end of the
-week and everything will be then compose into one shared log which will be
-written here.
+The group writes their own individual efforts at the end of each
+week and everything is then composed into one shared log which is shown here.
 
 A link to the project source code can be found online at
 https://github.com/DATX02-20-02/CityCraft, and a link to the full project report
@@ -34,131 +33,113 @@ https://github.com/DATX02-20-02/Report.
 
 * Week 20
 # 2020-06-1 - 2020-06-5
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is a work in progress
-#+end_notice
 
-During the final week, some minor adjustments on the report and CityCraft application were made.
-The changes were based on the comments received from the opposition group during the final presentation and the feedback from our examiner.
+The final week was spent on some minor adjustments on the report and the project log.
+The changes were based on the comments we received from the feedback from our examiner,
+as the opposition comments had been handled the previous week.
+We also made some polish of our own though, like the cover figure.
 
 ** Writing
   Jacob made some minor improvements to the bibliography of the report according to the feedback the group received from the examiner.
-  The references now show the actual journals and issues rather than just a DOI.
-  The previous cover image for the report was also replaced with an updated version.
+  More references now also show the journals and issues rather than just a DOI.
+  There remains some references which could use more such details but we were not able to find these details online.
+  
+  The previous cover image for the report was replaced with an updated version.
   Anton rendered a new cover image for the report with updated materials that render correctly in Blender.
-   
-** Development
-  Previously, the rooftops of buildings were displayed incorrectly and the ocean appeared gray when rendered in Blender.
-  This was solved by changing the shader for the ocean and the rooftop buildings into the *Standard Unity Shader* that follows the *.glTF* specification, and hence, are displayed correctly in Blender.
-   
-  #+begin_w-responsive
-  #+CAPTION: How the rooftops previously were incorrectly displayed in Blender.
-  [[./images/week20/rooftop.png]]
-  #+end_w-responsive
   
   #+begin_w-responsive
   #+CAPTION: Final city exported and rendered in Blender, with shader fixes.
   [[./images/week20/cover.png]]
   #+end_w-responsive
   
-  Jacob also made an official release version of CityCraft and the report, available [[https://github.com/DATX02-20-02/CityCraft/releases][here]].
+  Jacob also made an official release version of CityCraft and the report.
+  The code release is available [[https://github.com/DATX02-20-02/CityCraft/releases][here]].
 
 * Week 19
 # 2020-05-25 - 2020-05-31
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is a work in progress
-#+end_notice
 
-#+BEGIN_COMMENT
-Final presentation
-Resolved comments from other group opposition
-#+END_COMMENT
-
+** Final Presentation
 The week of the final presentation the whole group presented, planned, and rehearsed the final presentation.
 The group received a lot of appraising comments from our supervisor as well as the opposing group on the presentation.
 This was at least some confirmation that the presentation was well presented which the project group felt as well. 
 
-Furthermore, the opposition group, consisting of Viktor and Anton, prepared questions and comments for the opposing group.
-Viktor and Anton also presented these to the opposing group and many of the comments were well received and brought about a good dialog.
+Finally, after we had done our presentation, it was time to receive our opposition.
+The opposition we received ended up focusing mostly on structural suggestion, which
+we and our supervisor felt were somewhat subjective.
+However, we did also get some interesting feedback regarding
+the questions in our introduction and user testing in discussion.
+These comments were resolved by the end of the week.
 
-Every group member also wrote and submitted their evaluation of all group members.
+Our opposition sub-group, consisting of Viktor and Anton,
+prepared questions and comments for their opposition.
+Viktor and Anton also presented these to the opposing group and many of the comments
+were well received and brought about a good dialog.
+
+Every group member also wrote and submitted their second self-evaluations.
+   
+** Development
+  Previously, the rooftops of buildings were displayed incorrectly and the ocean appeared gray when rendered in Blender.
+  This was solved by changing the shader for the ocean and the rooftop buildings into the *Standard Unity Shader* that
+  is compatible with the *.glTF* specification, and hence, are displayed correctly in Blender.
+   
+  #+begin_w-responsive
+  #+CAPTION: How the rooftops previously were incorrectly displayed (on some computers) in Blender.
+  [[./images/week20/rooftop.png]]
+  #+end_w-responsive
 
 * Week 18
 # 2020-05-18 - 2020-05-24
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is a work in progress
-#+end_notice
 
 The exhibition was cancelled and replaced with a video demonstrating our
 project.
 We decided to assign the task of creating this video to Theodor, and he did a
 good job in demonstrating the functionality of our application.
-We all spent time looking at his video and giving him feedback before he turned
-it in.
+Jacob and Alexander spent time giving him feedback on the video,
+which resulted in a few iterations before it was finally submitted.
 
 ** Final presentation
 It was soon time for a part of the group to do the final presentation.
-Alexander, Theodor, Marcus, Jacob were the ones to do the presentation, and we
-decided to use Google Sheets for it.
+Alexander, Theodor, Marcus, and Jacob were the ones to do the presentation,
+and we decided to use Google Slides for it.
 Adding content and manuscripts for the presentation was the primary focus of
-this week, as well as helping eachother by giving feedback.
+this week, practicing together, as well as helping each other through feedback.
 By practicing the presentation quite a few times, we could ensure that the
-presentation would go smoothly without any hiccups, which it did.
+presentation would go smoothly without any hiccups, which it fortunately did.
 Our supervisor and examinator were happy with our presentation, which was good
 to hear.
 
-Finally, after we had done our presentation, it was time for the other group to
-go through their opposition.
-Unfortunately, the questions and feedback they gave were not very useful and
-they focused on unnecessary things.
-However, we did get some constructive feedback which were just simple fixes in
-our report.
-
-Afterwards, Viktor and Anton would give their opposition comments to the group
-that were assigned to them, which we all thought in the group were useful and
-constructive comments.
-We all made sure that the most importants comments were put forward for the
-group, which hopefully they went through afterwards and resolved.
-
 * Week 17
 # 2020-05-11 - 2020-05-17
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is a work in progress
-#+end_notice
 
 ** Development
 It was time to get all the different branches into our master branch, so a lot
 of the code needed to be rebased and merged.
-It took much longer than expected, because some branches were quite old, such as
-the new parking generator and road mesh branch.
+This took a longer time than expected, because some branches were quite old, such as
+the parking generator and road mesh improvements.
 
 ** Writing
 The deadline for the final report was this week, so the group spent lots of time
-to finish it and managed to get it to a state where we were happy with.
-The report was turned in and we were awaiting the opposition from the other group.
+to finish it and managed to get it to a state where we were happy with it.
+The report was submitted and we were awaiting the opposition from the other group.
 
 We received the report from the other group and everyone went through it and
 left feedback which would later be turned in and sent to the other group.
-There were some confusion in regards with how the other group should receive the
-opposition, as well as when we would receive it.
-We found out that it was our responsibilty to send it to the other group, which
-we did, albeit after the deadline has passed (again, due to lots of confusion
+There were some confusion in regards to how the other group should receive the
+opposition, as well as when we would receive ours.
+We found out that it was our responsibilty to mail it to the other group, which
+we did, albeit after the deadline had passed (again, due to lots of confusion
 and missing information from the examinators).
+Lots of other groups seemed to have been confused by this as well.
+The group we opposed did not seem to mind that they got it a bit late though.
 
 * Week 16
 # 2020-05-04 - 2020-05-10
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is a work in progress
-#+end_notice
 
 We had our first teambuilding during this week, but not all members could join.
 Alexander, Theodor, Anton and Viktor met up at JA Pripps to eat some burgers and
 drink some beer.
+A bit late perhaps for having our first teambuilding session, but better late
+than never. It was nice break from all the report and code writing.
 
 Other than that, there were a lot of development for final changes and fixes
 that we wanted to finish before the final report.
@@ -175,7 +156,7 @@ More details how these algorithms work can be found in the Methods chapter in
 the report, specifically under the plot generator section.
 
 Buildings also received some level of detail attention, since the buildings make
-up a big part of the city, it made much sense to optimize it as well.
+up a big part of the city, it made much sense to optimize them as well.
 
 Alexander decided to improve the parking generator by using textured quads
 instead of creating white lines individually.
@@ -194,19 +175,15 @@ More details is found in the parking generator in the report.
 #+end_w-responsive
 
 ** Writing
-We had our third and final fackspråk with the Chalmers Library which gave us
-some feedback and recommendations in regards to our writing.
-So, the group went through this to improve the content of our report.
+We had our third and final fackspråk meeting with the Chalmers Library which gave us
+some feedback and recommendations in regards to our writing and final presentation structure.
+So, the group went through this to improve the content of our report and presentation.
 
 Continuing like the last couple of weeks with the writing to finalize it, so
-that it would be ready for the hand in deadline which was approaching.
+that it would be ready for the hand-in deadline which was approaching.
 
 * Week 15
 # 2020-04-27 - 2020-05-03
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is a work in progress
-#+end_notice
 
 ** Development
 The terrain color was adjusted by Jacob to correctly contain snowy mountains.
@@ -218,13 +195,10 @@ Lots of focus was placed on writing the results chapter and other sections, such
 as the discussion.
 Anton and Viktor were primarily focusing on the discussion chapter, while the
 others focused on methods and results.
+Jacob also wrote the Related Works subchapter.
 
 * Week 14
 # 2020-04-20 - 2020-04-26
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is a work in progress
-#+end_notice
 
 ** Development
 Marcus spent time on the GUI for the terrain generator, and it is now possible
@@ -249,33 +223,30 @@ implement inputs for their own specialized generators, if needed.
 #+end_w-responsive
 
 ** Optimization
-Jacob noticed that all our textures in our application was imported at an
+Jacob noticed that all textures in our application were imported at an
 extremely high resolution.
 By reducing the resolution that the textures are imported as in the game, we
 achieved a significant boost in performance.
 Because the export function handles meshes and textures independently from the
 game rendering, the textures are still exported in full resolution, causing no
-downsides for the final end goal of exporting the mesh.
+downsides for the end goal of exporting the cities.
 
 This problem was not something we anticipated would cause such a huge bottleneck
 in performance.
 However, because the L-System based building generator had not been implemented
-into the application yet, the performance loss would not be noticed until that
+into the application yet, the performance loss would not be dramatic until that
 was merged into master.
-Fixing this caused the application to run much smoother, since buildings were
-previously relying on lots of textures.
+Fixing this caused the application to run much smoother and requiring way less memory,
+since buildings were previously relying on lots of textures.
 So, it makes sense that performance would be a huge problem if this optimization
 was not implemented.
 
 ** Writing
 Much like last week, this week involved a lot of writing to document the
-different parts of the application
+different parts of the application.
+Most writing was related to the Methods and Results chapters.
 
 * Week 13
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is a work in progress
-#+end_notice
 
 ** Decisions
 #+begin_decisions
@@ -343,10 +314,6 @@ Lots of progress were made on the Methods and Results chapters among all group m
 member describing their own section as described in the decisions above.
 
 * Week 12
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is a work in progress
-#+end_notice
 
 As usual, this week had the regular meetings with the group and the supervisor,
 where we asked a few questions that we had, such as how obligatory attendance
@@ -461,10 +428,6 @@ and roads, or at least separated into chunks, might give a significant boost,
 but no actual implementation and testing has been done as of yet.
 
 * Week 11
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is a work in progress
-#+end_notice
 
 During the meeting with our supervisor, we asked regarding our current project
 log, which was just a Google Sheet which included our own individual efforts as
@@ -581,10 +544,6 @@ The paths inside the parks can look a bit weird at times though.
 #+end_w-responsive
 
 * Week 10
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is a work in progress
-#+end_notice
 
 In this week, Marcus has worked on the UI for the terrain generator, adding sea
 level, x offset and z offset as modifiable options.
@@ -695,10 +654,6 @@ However, in the end, no one had time to work on anything and preferred to study
 for their exams.
 
 * Week 8
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is work in progress!
-#+end_notice
 
 ** Decisions
 #+begin_decisions
@@ -751,10 +706,6 @@ Some bugs where discovered with the plot division. One of these was the Differen
 function, which was resolved.
 
 * Week 7
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is work in progress!
-#+end_notice
 
 During this week, Anton and Viktor held the halftime presentation, and the rest
 of the group members were there to see them and other group presentations as well.
@@ -874,10 +825,6 @@ of weeks.
 #+end_column
 #+end_columns
 * Week 6
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is work in progress!
-#+end_notice
 
 In this week everyone kept working on the generators from last week and
 improving them. Viktor and Anton also spent time on preparing the half-time
@@ -995,10 +942,6 @@ why it would not work. Jacob is searching for other ways at the moment and
 hopefully has a solution next week.
 
 * Week 5
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is work in progress!
-#+end_notice
 
 Most of the group members spent this week working on their own parts of the
 application, mostly getting each generator to do what it should. We also got a
@@ -1126,10 +1069,6 @@ FBX exporter depends on Unity Editor code, but the goal is that our application
 should work compiled, without any editor dependencies.
 
 * Week 4
-#+ATTR_HTML: :class notice-warning
-#+begin_notice
-This section is work in progress!
-#+end_notice
 
 Since the deadline for the project plan was coming up, this week was dedicated
 to writing the content of the project plan. Most of the time went to this, but there
