@@ -138,7 +138,7 @@ The group we opposed did not seem to mind that they got it a bit late though.
 We had our first teambuilding during this week, but not all members could join.
 Alexander, Theodor, Anton and Viktor met up at JA Pripps to eat some burgers and
 drink some beer.
-A bit late perhaphs for having our first teambuilding session, but better late
+A bit late perhaps for having our first teambuilding session, but better late
 than never. It was nice break from all the report and code writing.
 
 Other than that, there were a lot of development for final changes and fixes
