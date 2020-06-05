@@ -196,6 +196,14 @@ The terrain color was adjusted by Jacob to correctly contain snowy mountains.
 We also found some issues in the park generator which caused no trees, stones
 or bushes to generated, which Jacob managed to fix.
 
+Anton spent a lot of time this week improving the road mesh, creating better
+textures for intersections.
+However, it lead to lots of issues that turned out to be very difficult to fix,
+so we decided to delay and eventually abandon it due to the time requirement of
+fixing it.
+We simply decided that there were other, more important things to focus on
+instead, such as the report, opposition and final presentation.
+
 ** Writing
 Lots of focus was placed on writing the results chapter and other sections, such
 as the discussion.
