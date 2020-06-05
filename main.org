@@ -477,10 +477,20 @@ Alexander implemented block and plot type classification based on the size of
 the block / plot, which lets us give the blocks / plots more variety in the
 city.
 Jacob added a skyscraper generator which is generated inside skyscraper plots
-which are randomly assigned from the plot generator.
-#+BEGIN_COMMENT
-Add gif of skyscrapers being generated and resized.
-#+END_COMMENT
+which are randomly assigned from the plot generator. See Figure [[fig:skyscraper1]] and [[fig:skyscraper2]].
+
+#+begin_columns
+#+begin_column
+#+CAPTION: Dynamic sizes of skyscrapers.
+#+NAME: fig:skyscraper1
+[[./images/week11/skyscraper.gif]]
+#+end_column
+#+begin_column
+#+CAPTION: Dynamic windows of skyscrapers.
+#+NAME: fig:skyscraper2
+[[./images/week11/skyscraper2.gif]]
+#+end_column
+#+end_columns
 
 Theodor has started creating what will be the final structure of the
 BuildingGenerator, which includes the ability to generate any type of building
