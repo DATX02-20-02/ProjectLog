@@ -80,7 +80,7 @@ Every group member also wrote and submitted their second self-evaluations.
 ** Development
   Previously, the rooftops of buildings were displayed incorrectly and the ocean appeared gray when rendered in Blender.
   This was solved by changing the shader for the ocean and the rooftop buildings into the *Standard Unity Shader* that
-  is comaptible with the *.glTF* specification, and hence, are displayed correctly in Blender.
+  is compatible with the *.glTF* specification, and hence, are displayed correctly in Blender.
    
   #+begin_w-responsive
   #+CAPTION: How the rooftops previously were incorrectly displayed (on some computers) in Blender.
