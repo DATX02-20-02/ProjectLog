@@ -97,6 +97,12 @@ good job in demonstrating the functionality of our application.
 Jacob and Alexander spent time giving him feedback on the video,
 which resulted in a few iterations before it was finally submitted.
 
+** Decisions
+#+begin_decisions
+- Theodor will be mainly responsible for creating the exhibition video, and the
+  other members will give him feedback.
+#+end_decisions
+
 ** Final presentation
 It was soon time for a part of the group to do the final presentation.
 Alexander, Theodor, Marcus, and Jacob were the ones to do the presentation,
